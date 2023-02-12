@@ -11,5 +11,15 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
+<>
+    <Script 
+    id="beam-analytics" 
+    strategy="afterInteractive" 
+    src="https://beamanalytics.b-cdn.net/beam.min.js" 
+    data-token="e7964972-6ea2-46f7-b258-af3be2a29496" 
+    async>
+  
+  </Script>
+
 export default MyApp
   
