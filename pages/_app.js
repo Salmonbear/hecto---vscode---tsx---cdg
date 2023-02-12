@@ -2,6 +2,7 @@
 import '../styles/globals.css'
 import { PlasmicRootProvider } from "@plasmicapp/react-web";
 import Head from "next/head";
+import Script from "script/head";
 
 function MyApp({ Component, pageProps }) {
   return (
