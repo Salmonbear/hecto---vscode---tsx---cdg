@@ -37,6 +37,7 @@ import {
 import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 import HectoNav from "../../HectoNav"; // plasmic-import: 1Xqtr1aGys/component
 import Button from "../../Button"; // plasmic-import: 16yj8MRmRBT/component
+import Footer from "../../Footer"; // plasmic-import: Iw1cdeIou4/component
 
 import { useScreenVariants as useScreenVariantskILw5UiAaS1UF } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: kILw5uiAaS1uF/globalVariant
 
@@ -63,6 +64,7 @@ export type PlasmicIndex__OverridesType = {
   root?: p.Flex<"div">;
   embedHtml?: p.Flex<typeof Embed>;
   hectoNav?: p.Flex<typeof HectoNav>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   features?: p.Flex<"section">;
   container4?: p.Flex<"div">;
   outerRow2?: p.Flex<"div">;
@@ -79,6 +81,7 @@ export type PlasmicIndex__OverridesType = {
   outer?: p.Flex<"div">;
   container?: p.Flex<"div">;
   footerBottom?: p.Flex<"div">;
+  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultIndexProps {}
@@ -299,10 +302,12 @@ function PlasmicIndex__RenderFunc(props: {
                         )}
                       >
                         <p.PlasmicLink
+                          data-plasmic-name={"link"}
+                          data-plasmic-override={overrides.link}
                           className={classNames(
                             projectcss.all,
                             projectcss.a,
-                            sty.link__y2RdF
+                            sty.link
                           )}
                           component={Link}
                           platform={"nextjs"}
@@ -1266,67 +1271,11 @@ function PlasmicIndex__RenderFunc(props: {
                 data-plasmic-override={overrides.footerBottom}
                 className={classNames(projectcss.all, sty.footerBottom)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__eUaht)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__egxLh
-                    )}
-                  >
-                    {"© Hecto. All rights reserved"}
-                  </div>
-
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      sty.link__nhI
-                    )}
-                    component={Link}
-                    platform={"nextjs"}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__wtF
-                      )}
-                    >
-                      {"Privacy"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__oYrjZ
-                      )}
-                    >
-                      {"Terms and Conditions"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___7A1KJ
-                      )}
-                    >
-                      {"Contact Us"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__c4XBg
-                      )}
-                    >
-                      {"Blog"}
-                    </div>
-                  </p.PlasmicLink>
-                </div>
+                <Footer
+                  data-plasmic-name={"footer"}
+                  data-plasmic-override={overrides.footer}
+                  className={classNames("__wab_instance", sty.footer)}
+                />
               </div>
             </div>
           </p.Stack>
@@ -1341,6 +1290,7 @@ const PlasmicDescendants = {
     "root",
     "embedHtml",
     "hectoNav",
+    "link",
     "features",
     "container4",
     "outerRow2",
@@ -1356,10 +1306,12 @@ const PlasmicDescendants = {
     "reasonBox6",
     "outer",
     "container",
-    "footerBottom"
+    "footerBottom",
+    "footer"
   ],
   embedHtml: ["embedHtml"],
   hectoNav: ["hectoNav"],
+  link: ["link"],
   features: [
     "features",
     "container4",
@@ -1383,7 +1335,8 @@ const PlasmicDescendants = {
   reasonBox6: ["reasonBox6"],
   outer: ["outer", "container"],
   container: ["container"],
-  footerBottom: ["footerBottom"]
+  footerBottom: ["footerBottom", "footer"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1392,6 +1345,7 @@ type NodeDefaultElementType = {
   root: "div";
   embedHtml: typeof Embed;
   hectoNav: typeof HectoNav;
+  link: "a";
   features: "section";
   container4: "div";
   outerRow2: "div";
@@ -1408,6 +1362,7 @@ type NodeDefaultElementType = {
   outer: "div";
   container: "div";
   footerBottom: "div";
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1473,6 +1428,7 @@ export const PlasmicIndex = Object.assign(
     // Helper components rendering sub-elements
     embedHtml: makeNodeComponent("embedHtml"),
     hectoNav: makeNodeComponent("hectoNav"),
+    link: makeNodeComponent("link"),
     features: makeNodeComponent("features"),
     container4: makeNodeComponent("container4"),
     outerRow2: makeNodeComponent("outerRow2"),
@@ -1489,6 +1445,7 @@ export const PlasmicIndex = Object.assign(
     outer: makeNodeComponent("outer"),
     container: makeNodeComponent("container"),
     footerBottom: makeNodeComponent("footerBottom"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicIndex
     internalVariantProps: PlasmicIndex__VariantProps,

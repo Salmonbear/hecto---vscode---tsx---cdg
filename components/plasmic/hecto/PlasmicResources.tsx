@@ -38,6 +38,7 @@ import HectoNav from "../../HectoNav"; // plasmic-import: 1Xqtr1aGys/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms"; // plasmic-import: 8N9-WfZSaq/codeComponent
 import { CmsRowField } from "@plasmicpkgs/plasmic-cms"; // plasmic-import: w6HdOz-Pcn/codeComponent
 import Button from "../../Button"; // plasmic-import: 16yj8MRmRBT/component
+import Footer from "../../Footer"; // plasmic-import: Iw1cdeIou4/component
 
 import { useScreenVariants as useScreenVariantskILw5UiAaS1UF } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: kILw5uiAaS1uF/globalVariant
 
@@ -61,6 +62,7 @@ export type PlasmicResources__OverridesType = {
   root?: p.Flex<"div">;
   hectoNav?: p.Flex<typeof HectoNav>;
   heroHorizontal?: p.Flex<"div">;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   features?: p.Flex<"section">;
   blogColumn?: p.Flex<"div">;
   cmsDataLoader?: p.Flex<typeof CmsQueryRepeater>;
@@ -69,7 +71,7 @@ export type PlasmicResources__OverridesType = {
   outer?: p.Flex<"div">;
   container?: p.Flex<"div">;
   svg?: p.Flex<"svg">;
-  footerBottom?: p.Flex<"div">;
+  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultResourcesProps {}
@@ -210,7 +212,19 @@ function PlasmicResources__RenderFunc(props: {
                                       fontWeight: 700
                                     }}
                                   >
-                                    {"Hecto Resources."}
+                                    {"Hecto Resources"}
+                                  </span>
+                                  <React.Fragment>{""}</React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{
+                                      color: "#FF7C08",
+                                      fontWeight: 700
+                                    }}
+                                  >
+                                    {"."}
                                   </span>
                                 </React.Fragment>
                               </h1>
@@ -238,12 +252,14 @@ function PlasmicResources__RenderFunc(props: {
                             <React.Fragment>{""}</React.Fragment>
                             {
                               <p.PlasmicLink
+                                data-plasmic-name={"link"}
+                                data-plasmic-override={overrides.link}
                                 className={classNames(
                                   projectcss.all,
                                   projectcss.a,
                                   projectcss.__wab_text,
                                   projectcss.plasmic_default__inline,
-                                  sty.link__xe4M
+                                  sty.link
                                 )}
                                 component={Link}
                                 href={"https://twitter.com/thedudlian" as const}
@@ -576,81 +592,11 @@ function PlasmicResources__RenderFunc(props: {
             </div>
 
             <div className={classNames(projectcss.all, sty.freeBox__sok7B)}>
-              <div
-                data-plasmic-name={"footerBottom"}
-                data-plasmic-override={overrides.footerBottom}
-                className={classNames(projectcss.all, sty.footerBottom)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__p5Zc)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wJp9
-                    )}
-                  >
-                    {"© Hecto . All rights reserved"}
-                  </div>
-
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      sty.link__lYcHz
-                    )}
-                    component={Link}
-                    platform={"nextjs"}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__efgNc
-                      )}
-                    >
-                      {"Privacy"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__zpMbw
-                      )}
-                    >
-                      {"Terms and Conditions"}
-                    </div>
-
-                    <p.PlasmicLink
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__kvTqd
-                      )}
-                      component={Link}
-                      href={"https://hecto.io/contact" as const}
-                      platform={"nextjs"}
-                    >
-                      {"Contact Us"}
-                    </p.PlasmicLink>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__um3IN
-                      )}
-                    >
-                      {"Blog"}
-                    </div>
-
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__mZlUf)}
-                    />
-                  </p.PlasmicLink>
-                </div>
-              </div>
+              <Footer
+                data-plasmic-name={"footer"}
+                data-plasmic-override={overrides.footer}
+                className={classNames("__wab_instance", sty.footer)}
+              />
             </div>
           </p.Stack>
         ) : null}
@@ -664,6 +610,7 @@ const PlasmicDescendants = {
     "root",
     "hectoNav",
     "heroHorizontal",
+    "link",
     "features",
     "blogColumn",
     "cmsDataLoader",
@@ -672,10 +619,11 @@ const PlasmicDescendants = {
     "outer",
     "container",
     "svg",
-    "footerBottom"
+    "footer"
   ],
   hectoNav: ["hectoNav"],
-  heroHorizontal: ["heroHorizontal"],
+  heroHorizontal: ["heroHorizontal", "link"],
+  link: ["link"],
   features: ["features", "blogColumn", "cmsDataLoader", "img", "cmsEntryField"],
   blogColumn: ["blogColumn", "cmsDataLoader", "img", "cmsEntryField"],
   cmsDataLoader: ["cmsDataLoader", "img", "cmsEntryField"],
@@ -684,7 +632,7 @@ const PlasmicDescendants = {
   outer: ["outer", "container"],
   container: ["container"],
   svg: ["svg"],
-  footerBottom: ["footerBottom"]
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -693,6 +641,7 @@ type NodeDefaultElementType = {
   root: "div";
   hectoNav: typeof HectoNav;
   heroHorizontal: "div";
+  link: "a";
   features: "section";
   blogColumn: "div";
   cmsDataLoader: typeof CmsQueryRepeater;
@@ -701,7 +650,7 @@ type NodeDefaultElementType = {
   outer: "div";
   container: "div";
   svg: "svg";
-  footerBottom: "div";
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -767,6 +716,7 @@ export const PlasmicResources = Object.assign(
     // Helper components rendering sub-elements
     hectoNav: makeNodeComponent("hectoNav"),
     heroHorizontal: makeNodeComponent("heroHorizontal"),
+    link: makeNodeComponent("link"),
     features: makeNodeComponent("features"),
     blogColumn: makeNodeComponent("blogColumn"),
     cmsDataLoader: makeNodeComponent("cmsDataLoader"),
@@ -775,7 +725,7 @@ export const PlasmicResources = Object.assign(
     outer: makeNodeComponent("outer"),
     container: makeNodeComponent("container"),
     svg: makeNodeComponent("svg"),
-    footerBottom: makeNodeComponent("footerBottom"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicResources
     internalVariantProps: PlasmicResources__VariantProps,
