@@ -51,7 +51,6 @@ export const PlasmicFooter__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicFooter__OverridesType = {
   footerBottom?: p.Flex<"div">;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultFooterProps {
@@ -116,9 +115,7 @@ function PlasmicFooter__RenderFunc(props: {
         </div>
 
         <p.PlasmicLink
-          data-plasmic-name={"link"}
-          data-plasmic-override={overrides.link}
-          className={classNames(projectcss.all, projectcss.a, sty.link)}
+          className={classNames(projectcss.all, projectcss.a, sty.link__z3MpL)}
           component={Link}
           platform={"nextjs"}
         >
@@ -152,15 +149,19 @@ function PlasmicFooter__RenderFunc(props: {
             {"Contact Us"}
           </div>
 
-          <div
+          <p.PlasmicLink
             className={classNames(
               projectcss.all,
+              projectcss.a,
               projectcss.__wab_text,
-              sty.text__jJ9V6
+              sty.link__jJ9V6
             )}
+            component={Link}
+            href={`/resources`}
+            platform={"nextjs"}
           >
             {"Resources"}
-          </div>
+          </p.PlasmicLink>
 
           <div className={classNames(projectcss.all, sty.freeBox__wXuG)} />
         </p.PlasmicLink>
@@ -170,15 +171,13 @@ function PlasmicFooter__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  footerBottom: ["footerBottom", "link"],
-  link: ["link"]
+  footerBottom: ["footerBottom"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   footerBottom: "div";
-  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -242,7 +241,6 @@ export const PlasmicFooter = Object.assign(
   makeNodeComponent("footerBottom"),
   {
     // Helper components rendering sub-elements
-    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicFooter
     internalVariantProps: PlasmicFooter__VariantProps,
