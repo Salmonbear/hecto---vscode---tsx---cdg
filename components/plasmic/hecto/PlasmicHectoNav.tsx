@@ -166,10 +166,10 @@ function PlasmicHectoNav__RenderFunc(props: {
               sty.link__sbdo8
             )}
             component={Link}
-            href={`/resources`}
+            href={"https://app.hecto.io/blog" as const}
             platform={"nextjs"}
           >
-            {"Resources"}
+            {"Blog"}
           </p.PlasmicLink>
 
           <p.PlasmicLink

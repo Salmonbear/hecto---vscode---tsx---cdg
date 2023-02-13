@@ -38,6 +38,7 @@ import HectoNav from "../../HectoNav"; // plasmic-import: 1Xqtr1aGys/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms"; // plasmic-import: 8N9-WfZSaq/codeComponent
 import { PlasmicHead } from "@plasmicapp/react-web"; // plasmic-import: Lo3ARtUvly/codeComponent
 import Button from "../../Button"; // plasmic-import: 16yj8MRmRBT/component
+import Footer from "../../Footer"; // plasmic-import: Iw1cdeIou4/component
 
 import { useScreenVariants as useScreenVariantskILw5UiAaS1UF } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: kILw5uiAaS1uF/globalVariant
 
@@ -63,13 +64,14 @@ export type PlasmicBlogArticle__OverridesType = {
   root?: p.Flex<"div">;
   hectoNav?: p.Flex<typeof HectoNav>;
   cmsDataLoader?: p.Flex<typeof CmsQueryRepeater>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   leadTitle?: p.Flex<"h1">;
   img?: p.Flex<typeof p.PlasmicImg>;
   blogBody?: p.Flex<"div">;
   head?: p.Flex<typeof PlasmicHead>;
   button?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
-  footerBottom?: p.Flex<"div">;
+  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultBlogArticleProps {}
@@ -228,12 +230,14 @@ function PlasmicBlogArticle__RenderFunc(props: {
                           <React.Fragment>{""}</React.Fragment>
                           {
                             <p.PlasmicLink
+                              data-plasmic-name={"link"}
+                              data-plasmic-override={overrides.link}
                               className={classNames(
                                 projectcss.all,
                                 projectcss.a,
                                 projectcss.__wab_text,
                                 projectcss.plasmic_default__inline,
-                                sty.link__p5Gd
+                                sty.link
                               )}
                               component={Link}
                               href={`/resources`}
@@ -508,79 +512,11 @@ function PlasmicBlogArticle__RenderFunc(props: {
             </div>
 
             <div className={classNames(projectcss.all, sty.freeBox__ylbjs)}>
-              <div
-                data-plasmic-name={"footerBottom"}
-                data-plasmic-override={overrides.footerBottom}
-                className={classNames(projectcss.all, sty.footerBottom)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___9N3ST)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ttB6N
-                    )}
-                  >
-                    {"© Hecto . All rights reserved"}
-                  </div>
-
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      sty.link__qqyug
-                    )}
-                    component={Link}
-                    platform={"nextjs"}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__eU62L
-                      )}
-                    >
-                      {"Privacy"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__anPlR
-                      )}
-                    >
-                      {"Terms and Conditions"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__xGyTo
-                      )}
-                    >
-                      {"Contact Us"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__oGOdd
-                      )}
-                    >
-                      {"Blog"}
-                    </div>
-
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__pQpcn)}
-                    />
-                  </p.PlasmicLink>
-                </div>
-              </div>
+              <Footer
+                data-plasmic-name={"footer"}
+                data-plasmic-override={overrides.footer}
+                className={classNames("__wab_instance", sty.footer)}
+              />
             </div>
           </p.Stack>
         ) : null}
@@ -594,23 +530,32 @@ const PlasmicDescendants = {
     "root",
     "hectoNav",
     "cmsDataLoader",
+    "link",
     "leadTitle",
     "img",
     "blogBody",
     "head",
     "button",
     "svg",
-    "footerBottom"
+    "footer"
   ],
   hectoNav: ["hectoNav"],
-  cmsDataLoader: ["cmsDataLoader", "leadTitle", "img", "blogBody", "head"],
+  cmsDataLoader: [
+    "cmsDataLoader",
+    "link",
+    "leadTitle",
+    "img",
+    "blogBody",
+    "head"
+  ],
+  link: ["link"],
   leadTitle: ["leadTitle"],
   img: ["img"],
   blogBody: ["blogBody"],
   head: ["head"],
   button: ["button", "svg"],
   svg: ["svg"],
-  footerBottom: ["footerBottom"]
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -619,13 +564,14 @@ type NodeDefaultElementType = {
   root: "div";
   hectoNav: typeof HectoNav;
   cmsDataLoader: typeof CmsQueryRepeater;
+  link: "a";
   leadTitle: "h1";
   img: typeof p.PlasmicImg;
   blogBody: "div";
   head: typeof PlasmicHead;
   button: typeof Button;
   svg: "svg";
-  footerBottom: "div";
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -691,13 +637,14 @@ export const PlasmicBlogArticle = Object.assign(
     // Helper components rendering sub-elements
     hectoNav: makeNodeComponent("hectoNav"),
     cmsDataLoader: makeNodeComponent("cmsDataLoader"),
+    link: makeNodeComponent("link"),
     leadTitle: makeNodeComponent("leadTitle"),
     img: makeNodeComponent("img"),
     blogBody: makeNodeComponent("blogBody"),
     head: makeNodeComponent("head"),
     button: makeNodeComponent("button"),
     svg: makeNodeComponent("svg"),
-    footerBottom: makeNodeComponent("footerBottom"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicBlogArticle
     internalVariantProps: PlasmicBlogArticle__VariantProps,

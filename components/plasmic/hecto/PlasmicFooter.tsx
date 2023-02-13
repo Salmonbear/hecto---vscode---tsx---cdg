@@ -159,7 +159,7 @@ function PlasmicFooter__RenderFunc(props: {
               sty.text__jJ9V6
             )}
           >
-            {"Blog"}
+            {"Resources"}
           </div>
 
           <div className={classNames(projectcss.all, sty.freeBox__wXuG)} />
