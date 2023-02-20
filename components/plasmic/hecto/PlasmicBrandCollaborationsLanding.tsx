@@ -357,7 +357,7 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                             data-plasmic-override={overrides.img}
                             alt={""}
                             className={classNames(sty.img)}
-                            displayHeight={"auto" as const}
+                            displayHeight={"100%" as const}
                             displayMaxHeight={"none" as const}
                             displayMaxWidth={"100%" as const}
                             displayMinHeight={"0" as const}

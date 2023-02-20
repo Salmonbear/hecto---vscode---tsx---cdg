@@ -182,9 +182,11 @@
   position: relative;
   max-width: 100%;
   object-fit: contain;
-  height: auto;
+  height: 100%;
   width: 212px;
-  flex-grow: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-height: 0;
 }
 .img > picture > img {
   object-fit: contain;
