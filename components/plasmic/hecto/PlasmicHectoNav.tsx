@@ -195,7 +195,7 @@ function PlasmicHectoNav__RenderFunc(props: {
               sty.link__esyf1
             )}
             component={Link}
-            href={"https://app.hecto.io/search" as const}
+            href={"https://www.hecto.io/search" as const}
             platform={"nextjs"}
           >
             {"Search"}

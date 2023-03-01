@@ -39,6 +39,7 @@ import HectoNav from "../../HectoNav"; // plasmic-import: 1Xqtr1aGys/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms"; // plasmic-import: 8N9-WfZSaq/codeComponent
 import { PlasmicHead } from "@plasmicapp/react-web"; // plasmic-import: Lo3ARtUvly/codeComponent
 import Button from "../../Button"; // plasmic-import: 16yj8MRmRBT/component
+import Footer from "../../Footer"; // plasmic-import: Iw1cdeIou4/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -46,6 +47,7 @@ import projectcss from "./plasmic_hecto.module.css"; // plasmic-import: jLAmXkGd
 import sty from "./PlasmicBrandCollaborationsList.module.css"; // plasmic-import: EV2qDJ3DrUG/css
 
 import ArrowRightsvgIcon from "./icons/PlasmicIcon__ArrowRightsvg"; // plasmic-import: g1j_XxrLjbNK/icon
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: aExR7mqu1-8/icon
 
 export type PlasmicBrandCollaborationsList__VariantMembers = {};
 export type PlasmicBrandCollaborationsList__VariantsArgs = {};
@@ -76,6 +78,7 @@ export type PlasmicBrandCollaborationsList__OverridesType = {
   button?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
   footerBottom?: p.Flex<"div">;
+  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultBrandCollaborationsListProps {}
@@ -217,7 +220,7 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                         className={"plasmic_default__all plasmic_default__span"}
                         style={{ color: "#BFBFBF" }}
                       >
-                        {"Resources"}
+                        {"Brand Collaborations"}
                       </span>
                     </React.Fragment>
                   </p.PlasmicLink>
@@ -247,7 +250,7 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                       sty.h1
                     )}
                   >
-                    {"Brand Collaborations"}
+                    {"Best Brand Collaborations Examples to Inspire"}
                   </h1>
                 }
                 <React.Fragment>{""}</React.Fragment>
@@ -641,7 +644,7 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                         className={"plasmic_default__all plasmic_default__span"}
                         style={{ color: "#000000" }}
                       >
-                        {"Ready to start your campaign?"}
+                        {"Want more marketing inspiration"}
                       </span>
                     </React.Fragment>
                   </h2>
@@ -663,31 +666,42 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                     </React.Fragment>
                   </div>
 
-                  <Button
-                    data-plasmic-name={"button"}
-                    data-plasmic-override={overrides.button}
-                    className={classNames("__wab_instance", sty.button)}
-                    color={"blue" as const}
-                    endIcon={
-                      <ArrowRightsvgIcon
-                        data-plasmic-name={"svg"}
-                        data-plasmic-override={overrides.svg}
-                        className={classNames(projectcss.all, sty.svg)}
-                        role={"img"}
-                      />
-                    }
-                    showEndIcon={true}
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link__gQJwM
+                    )}
+                    component={Link}
+                    platform={"nextjs"}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__d9JXe
-                      )}
+                    <Button
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
+                      color={"blue" as const}
+                      endIcon={
+                        <ArrowRightsvgIcon
+                          data-plasmic-name={"svg"}
+                          data-plasmic-override={overrides.svg}
+                          className={classNames(projectcss.all, sty.svg)}
+                          role={"img"}
+                        />
+                      }
+                      link={`/brand-collaborations`}
+                      showEndIcon={true}
                     >
-                      {"Search Newsletters"}
-                    </div>
-                  </Button>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__d9JXe
+                        )}
+                      >
+                        {"Search Collaboration Examples"}
+                      </div>
+                    </Button>
+                  </p.PlasmicLink>
                 </div>
               </div>
             </div>
@@ -698,71 +712,11 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                 data-plasmic-override={overrides.footerBottom}
                 className={classNames(projectcss.all, sty.footerBottom)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__cntn9)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__shXy8
-                    )}
-                  >
-                    {"© Hecto . All rights reserved"}
-                  </div>
-
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      sty.link__z99Lk
-                    )}
-                    component={Link}
-                    platform={"nextjs"}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__mqXeu
-                      )}
-                    >
-                      {"Privacy"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__s68Ec
-                      )}
-                    >
-                      {"Terms and Conditions"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__oiEoZ
-                      )}
-                    >
-                      {"Contact Us"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__bwz4S
-                      )}
-                    >
-                      {"Blog"}
-                    </div>
-
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__nyyMm)}
-                    />
-                  </p.PlasmicLink>
-                </div>
+                <Footer
+                  data-plasmic-name={"footer"}
+                  data-plasmic-override={overrides.footer}
+                  className={classNames("__wab_instance", sty.footer)}
+                />
               </div>
             </div>
           </p.Stack>
@@ -787,7 +741,8 @@ const PlasmicDescendants = {
     "column",
     "button",
     "svg",
-    "footerBottom"
+    "footerBottom",
+    "footer"
   ],
   hectoNav: ["hectoNav"],
   leadTitle: ["leadTitle"],
@@ -801,7 +756,8 @@ const PlasmicDescendants = {
   column: ["column", "button", "svg"],
   button: ["button", "svg"],
   svg: ["svg"],
-  footerBottom: ["footerBottom"]
+  footerBottom: ["footerBottom", "footer"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -821,6 +777,7 @@ type NodeDefaultElementType = {
   button: typeof Button;
   svg: "svg";
   footerBottom: "div";
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -899,6 +856,7 @@ export const PlasmicBrandCollaborationsList = Object.assign(
     button: makeNodeComponent("button"),
     svg: makeNodeComponent("svg"),
     footerBottom: makeNodeComponent("footerBottom"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicBrandCollaborationsList
     internalVariantProps: PlasmicBrandCollaborationsList__VariantProps,

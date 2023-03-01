@@ -39,6 +39,7 @@ import HectoNav from "../../HectoNav"; // plasmic-import: 1Xqtr1aGys/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms"; // plasmic-import: 8N9-WfZSaq/codeComponent
 import { PlasmicHead } from "@plasmicapp/react-web"; // plasmic-import: Lo3ARtUvly/codeComponent
 import Button from "../../Button"; // plasmic-import: 16yj8MRmRBT/component
+import Footer from "../../Footer"; // plasmic-import: Iw1cdeIou4/component
 
 import { useScreenVariants as useScreenVariantskILw5UiAaS1UF } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: kILw5uiAaS1uF/globalVariant
 
@@ -66,12 +67,14 @@ export type PlasmicBrandCollaborationsExample__OverridesType = {
   root?: p.Flex<"div">;
   hectoNav?: p.Flex<typeof HectoNav>;
   cmsDataLoader?: p.Flex<typeof CmsQueryRepeater>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   leadTitle?: p.Flex<"h1">;
   blogBody?: p.Flex<"div">;
   head?: p.Flex<typeof PlasmicHead>;
   button?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
   footerBottom?: p.Flex<"div">;
+  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultBrandCollaborationsExampleProps {}
@@ -242,12 +245,14 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                           <React.Fragment>{""}</React.Fragment>
                           {
                             <p.PlasmicLink
+                              data-plasmic-name={"link"}
+                              data-plasmic-override={overrides.link}
                               className={classNames(
                                 projectcss.all,
                                 projectcss.a,
                                 projectcss.__wab_text,
                                 projectcss.plasmic_default__inline,
-                                sty.link__aV5Zi
+                                sty.link
                               )}
                               component={Link}
                               href={`/brand-collaborations`}
@@ -555,71 +560,11 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                 data-plasmic-override={overrides.footerBottom}
                 className={classNames(projectcss.all, sty.footerBottom)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__kuGk8)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__iboFf
-                    )}
-                  >
-                    {"© Hecto . All rights reserved"}
-                  </div>
-
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      sty.link__tSqXf
-                    )}
-                    component={Link}
-                    platform={"nextjs"}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__yjLnm
-                      )}
-                    >
-                      {"Privacy"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__lImZs
-                      )}
-                    >
-                      {"Terms and Conditions"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__sT8LJ
-                      )}
-                    >
-                      {"Contact Us"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__jDgsh
-                      )}
-                    >
-                      {"Blog"}
-                    </div>
-
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__rDVw)}
-                    />
-                  </p.PlasmicLink>
-                </div>
+                <Footer
+                  data-plasmic-name={"footer"}
+                  data-plasmic-override={overrides.footer}
+                  className={classNames("__wab_instance", sty.footer)}
+                />
               </div>
             </div>
           </p.Stack>
@@ -634,21 +579,25 @@ const PlasmicDescendants = {
     "root",
     "hectoNav",
     "cmsDataLoader",
+    "link",
     "leadTitle",
     "blogBody",
     "head",
     "button",
     "svg",
-    "footerBottom"
+    "footerBottom",
+    "footer"
   ],
   hectoNav: ["hectoNav"],
-  cmsDataLoader: ["cmsDataLoader", "leadTitle", "blogBody", "head"],
+  cmsDataLoader: ["cmsDataLoader", "link", "leadTitle", "blogBody", "head"],
+  link: ["link"],
   leadTitle: ["leadTitle"],
   blogBody: ["blogBody"],
   head: ["head"],
   button: ["button", "svg"],
   svg: ["svg"],
-  footerBottom: ["footerBottom"]
+  footerBottom: ["footerBottom", "footer"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -657,12 +606,14 @@ type NodeDefaultElementType = {
   root: "div";
   hectoNav: typeof HectoNav;
   cmsDataLoader: typeof CmsQueryRepeater;
+  link: "a";
   leadTitle: "h1";
   blogBody: "div";
   head: typeof PlasmicHead;
   button: typeof Button;
   svg: "svg";
   footerBottom: "div";
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -729,12 +680,14 @@ export const PlasmicBrandCollaborationsExample = Object.assign(
     // Helper components rendering sub-elements
     hectoNav: makeNodeComponent("hectoNav"),
     cmsDataLoader: makeNodeComponent("cmsDataLoader"),
+    link: makeNodeComponent("link"),
     leadTitle: makeNodeComponent("leadTitle"),
     blogBody: makeNodeComponent("blogBody"),
     head: makeNodeComponent("head"),
     button: makeNodeComponent("button"),
     svg: makeNodeComponent("svg"),
     footerBottom: makeNodeComponent("footerBottom"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicBrandCollaborationsExample
     internalVariantProps: PlasmicBrandCollaborationsExample__VariantProps,

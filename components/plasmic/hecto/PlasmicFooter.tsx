@@ -171,6 +171,41 @@ function PlasmicFooter__RenderFunc(props: {
             {"Resources"}
           </p.PlasmicLink>
 
+          <p.PlasmicLink
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              projectcss.__wab_text,
+              sty.link__hd6Cn
+            )}
+            component={Link}
+            href={`/brand-collaborations`}
+            platform={"nextjs"}
+          >
+            {"Brand"}
+          </p.PlasmicLink>
+
+          <p.PlasmicLink
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              projectcss.__wab_text,
+              sty.link__wCuEu
+            )}
+            component={Link}
+            href={`/brand-collaborations/list`}
+            platform={"nextjs"}
+          >
+            <React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#FFFFFF" }}
+              >
+                {"Collaborations"}
+              </span>
+            </React.Fragment>
+          </p.PlasmicLink>
+
           <div className={classNames(projectcss.all, sty.freeBox__wXuG)} />
         </p.PlasmicLink>
       </div>
