@@ -99,6 +99,20 @@ function PlasmicHectoNav__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
   const [$queries, setDollarQueries] = React.useState({});
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "variable",
+        type: "private",
+        variableType: "text",
+        initFunc: true
+          ? ({ $props, $state, $queries, $ctx }) => "" as const
+          : undefined
+      }
+    ],
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
 
   return (
     <NavigationBar
@@ -195,7 +209,7 @@ function PlasmicHectoNav__RenderFunc(props: {
               sty.link__esyf1
             )}
             component={Link}
-            href={"https://www.hecto.io/search" as const}
+            href={"https://app.hecto.io/search" as const}
             platform={"nextjs"}
           >
             {"Search"}
