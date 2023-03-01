@@ -14,6 +14,7 @@ import * as React from "react";
 
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
+import { useRouter } from "next/router";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
@@ -83,6 +84,13 @@ const __wrapUserPromise =
     return await promise;
   });
 
+function useNextRouter() {
+  try {
+    return useRouter();
+  } catch {}
+  return undefined;
+}
+
 function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
   variants: PlasmicBrandCollaborationsLanding__VariantsArgs;
   args: PlasmicBrandCollaborationsLanding__ArgsType;
@@ -91,6 +99,7 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
+  const __nextRouter = useNextRouter();
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
@@ -103,7 +112,6 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
@@ -283,7 +291,7 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__npSnc
+                          sty.text___9D88U
                         )}
                       >
                         {"No matching published entries found."}
@@ -301,7 +309,7 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__bd36J
+                          sty.text__rXpq8
                         )}
                       >
                         {"Loading..."}

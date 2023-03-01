@@ -1,7 +1,7 @@
 .root {
-  flex-direction: column;
   display: flex;
   position: relative;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   background: linear-gradient(0deg, #edf8ff 55%, #ffffff 100%) 0% 0% / 100% 100%
@@ -245,14 +245,14 @@
   object-fit: cover;
   position: relative;
 }
-.text__bo4I4 {
+.text___3TiN8 {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
   min-width: 0;
 }
-.text__fdrmC {
+.text__v4B4Y {
   position: relative;
   width: 100%;
   height: auto;

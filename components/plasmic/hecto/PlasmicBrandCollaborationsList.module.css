@@ -1,7 +1,7 @@
 .root {
-  flex-direction: column;
   display: flex;
   position: relative;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   background: linear-gradient(0deg, #edf8ff 55%, #ffffff 100%) 0% 0% / 100% 100%
@@ -71,12 +71,11 @@
 }
 .h2__nE3Uz {
   position: relative;
-  width: 100%;
+  width: auto;
   height: auto;
   max-width: 557px;
   font-size: 30px;
   text-align: left;
-  min-width: 0;
   padding: 20px;
 }
 .cmsDataLoader:global(.__wab_instance) {
@@ -93,19 +92,36 @@
   object-fit: cover;
   position: relative;
 }
-.text__cwg9B {
+.text__lr3D0 {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
   min-width: 0;
 }
-.text__mdn5L {
+.text__fPlHa {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
   min-width: 0;
+}
+.freeBox__bd16Z {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+.text___5URvj {
+  position: relative;
+  padding: 25px;
+}
+.h2__iosJ2 {
+  height: auto;
 }
 .freeBox__cM9Fv {
   display: flex;

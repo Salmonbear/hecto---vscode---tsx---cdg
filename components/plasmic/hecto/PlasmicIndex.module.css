@@ -1,7 +1,7 @@
 .root {
-  flex-direction: column;
   display: flex;
   position: relative;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   padding-right: 0px;
@@ -94,9 +94,9 @@
   }
 }
 .freeBox__fclkg {
-  flex-direction: row;
   display: flex;
   position: relative;
+  flex-direction: row;
   max-width: 1280px;
   width: 100%;
   min-width: 0;
@@ -150,8 +150,8 @@
   }
 }
 .freeBox__i8Qbf {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   width: 100%;
   min-width: 0;
 }
@@ -173,9 +173,9 @@
   margin-top: 32px;
 }
 .freeBox__c8Btc {
-  flex-direction: column;
   display: flex;
   position: relative;
+  flex-direction: column;
 }
 .freeBox__c8Btc > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -235,9 +235,9 @@
   min-width: 0;
 }
 .freeBox__altd {
-  flex-direction: row;
   display: flex;
   position: relative;
+  flex-direction: row;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -247,9 +247,9 @@
 }
 .freeBox__altd > :global(.__wab_flex-container) {
   flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
   align-items: stretch;
+  justify-content: center;
+  flex-wrap: nowrap;
   align-content: stretch;
   min-width: 0;
   margin-left: calc(0px - 20px);
@@ -388,9 +388,9 @@
   padding: 4.17em 15px 5em;
 }
 .freeBox___8Pphq {
-  flex-direction: row;
   display: flex;
   position: relative;
+  flex-direction: row;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -400,9 +400,9 @@
 }
 .freeBox___8Pphq > :global(.__wab_flex-container) {
   flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
   align-items: stretch;
+  justify-content: center;
+  flex-wrap: nowrap;
   align-content: stretch;
   min-width: 0;
   margin-left: calc(0px - 20px);
@@ -623,9 +623,9 @@
   padding: 0px 15px;
 }
 .freeBox__eL2WR {
-  flex-direction: column;
   display: flex;
   position: relative;
+  flex-direction: column;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -638,8 +638,8 @@
 }
 .freeBox__eL2WR > :global(.__wab_flex-container) {
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   min-width: 0;
   margin-top: calc(0px - 20px);
   height: calc(100% + 20px);
@@ -863,9 +863,9 @@
   padding: 0px 15px;
 }
 .freeBox__e5Xc {
-  flex-direction: column;
   display: flex;
   position: relative;
+  flex-direction: column;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -878,8 +878,8 @@
 }
 .freeBox__e5Xc > :global(.__wab_flex-container) {
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   min-width: 0;
   margin-top: calc(0px - 20px);
   height: calc(100% + 20px);
@@ -971,9 +971,9 @@
   padding: 0px 15px;
 }
 .freeBox___1Knur {
-  flex-direction: column;
   display: flex;
   position: relative;
+  flex-direction: column;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -987,8 +987,8 @@
 }
 .freeBox___1Knur > :global(.__wab_flex-container) {
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   min-width: 0;
   margin-top: calc(0px - 20px);
   height: calc(100% + 20px);

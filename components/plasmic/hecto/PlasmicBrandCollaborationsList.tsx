@@ -14,6 +14,7 @@ import * as React from "react";
 
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
+import { useRouter } from "next/router";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
@@ -64,8 +65,12 @@ export type PlasmicBrandCollaborationsList__OverridesType = {
   root?: p.Flex<"div">;
   hectoNav?: p.Flex<typeof HectoNav>;
   leadTitle?: p.Flex<"h1">;
+  h1?: p.Flex<"h1">;
   cmsDataLoader?: p.Flex<typeof CmsQueryRepeater>;
   head?: p.Flex<typeof PlasmicHead>;
+  penguinXPhiladelphia?: p.Flex<"h1">;
+  nikeXConverseXChinaTownMarket?: p.Flex<"h1">;
+  nomadlistXBufferXRemoteOk?: p.Flex<"h1">;
   columns?: p.Flex<"div">;
   column?: p.Flex<"div">;
   button?: p.Flex<typeof Button>;
@@ -83,6 +88,13 @@ const __wrapUserPromise =
     return await promise;
   });
 
+function useNextRouter() {
+  try {
+    return useRouter();
+  } catch {}
+  return undefined;
+}
+
 function PlasmicBrandCollaborationsList__RenderFunc(props: {
   variants: PlasmicBrandCollaborationsList__VariantsArgs;
   args: PlasmicBrandCollaborationsList__ArgsType;
@@ -91,6 +103,7 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
+  const __nextRouter = useNextRouter();
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
@@ -103,7 +116,6 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
@@ -222,16 +234,24 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                 sty.h2__nE3Uz
               )}
             >
-              {(() => {
-                try {
-                  return $ctx.plasmicCmsBrandCollabsItem.data.h2Subtitle;
-                } catch (e) {
-                  if (e instanceof TypeError) {
-                    return "Enter some text";
-                  }
-                  throw e;
+              <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <h1
+                    data-plasmic-name={"h1"}
+                    data-plasmic-override={overrides.h1}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1
+                    )}
+                  >
+                    {"Brand Collaborations"}
+                  </h1>
                 }
-              })()}
+                <React.Fragment>{""}</React.Fragment>
+              </React.Fragment>
             </h2>
 
             <CmsQueryRepeater
@@ -246,7 +266,7 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__cwg9B
+                        sty.text__lr3D0
                       )}
                     >
                       {"No matching published entries found."}
@@ -264,7 +284,7 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__mdn5L
+                        sty.text__fPlHa
                       )}
                     >
                       {"Loading..."}
@@ -312,6 +332,290 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                 )}
               </ph.DataCtxReader>
             </CmsQueryRepeater>
+
+            <div className={classNames(projectcss.all, sty.freeBox__bd16Z)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___5URvj
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h1
+                      data-plasmic-name={"penguinXPhiladelphia"}
+                      data-plasmic-override={overrides.penguinXPhiladelphia}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.penguinXPhiladelphia
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>
+                          {"Penguin x Philadelphia\n\n"}
+                        </React.Fragment>
+                        {
+                          <h2
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h2,
+                              projectcss.__wab_text,
+                              sty.h2__naH2E
+                            )}
+                          >
+                            {"Which brands were involved?"}
+                          </h2>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </h1>
+                  }
+                  <React.Fragment>
+                    {
+                      "\nPhiladelphia is a very popular brand of cheese, but some people may not know the best way to use it.\n\nAsda is a huge supermarket chain in the UK, and it used to be owned by Walmart.\n\nPenguin is actually the largest publishing house in the world, and they publish books for many famous people, including Michelle Obama and others.\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__bhzkg
+                      )}
+                    >
+                      {"What was the brand collaboration?"}
+                    </h2>
+                  }
+                  <React.Fragment>
+                    {
+                      "\nIt's great to see that Penguin and Philadelphia worked together on this cookbook project! Rather than just putting their names on an existing product like many other brand partnerships, they put in the effort to create something new for their brand collaboration. This not only helped Kraft's advertising campaign to promote Philadelphia as a delicious and easy ingredient for a quick meal, but it also made for a more meaningful collaboration.\n\nTo make things even better, the books were given as gifts to customers who bought more than one item. What a great way to incentivise purchases and raise brand awareness! The books were placed in the aisles of supermarkets, making it an effective way to reach potential customers.\n\nThe book was also made available for purchase on Amazon, which is fantastic for increasing brand awareness. All in all, it's clear that this collaboration was a success and helped to promote Philadelphia in a fun and creative way.\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__cIyDk
+                      )}
+                    >
+                      {"What we love about this cross marketing project"}
+                    </h2>
+                  }
+                  <React.Fragment>
+                    {
+                      "\nWow, this brand collaboration is really well done!\n\nBy teaming up with Penguin, Philadelphia gains excellent brand exposure. This collaboration also helps them reach new customers who may not have heard of them before.\n\nCustomers who receive the free book are even more motivated to buy more product and try out the delicious recipes inside.\n\nEven though the book is given away for free, it still encourages customers to buy *more* of the product. Plus, Kraft gets royalty payments, which is an additional source of revenue. It's a win-win for everyone!\n\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h1
+                      data-plasmic-name={"nikeXConverseXChinaTownMarket"}
+                      data-plasmic-override={
+                        overrides.nikeXConverseXChinaTownMarket
+                      }
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.nikeXConverseXChinaTownMarket
+                      )}
+                    >
+                      {"Nike x Converse x China Town Market"}
+                    </h1>
+                  }
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__jMgi9
+                      )}
+                    >
+                      {"\nWhich brands were involved?"}
+                    </h2>
+                  }
+                  <React.Fragment>
+                    {
+                      "\n\nWe're not entirely sure about the official status of this cross collab, but we absolutely love it, so we just had to include it!\n\nChina Town Market is a streetwear brand and bootleg label located in New York.\n\nNike, on the other hand, needs no introduction whatsoever. It is one of the largest brands in the world.\n\nConverse is also a well-known brand in its own right, and has been owned by Nike since 2003!\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__p06Lf
+                      )}
+                    >
+                      {"What was the brand collaboration?"}
+                    </h2>
+                  }
+                  <React.Fragment>
+                    {
+                      "\nWe love the story behind China Town Market's (now Market) creation of a fun twist on the classic Chuck Taylor shoe. They created an unofficial converse collaboration  by combining the Nike swoosh and the Converse Chuck Taylor silhouette - two of the most demanded things in pop culture. It's such a cool idea!\n\nInstead of pursuing Instagram collabs, China Town Market decided to create a super exclusive shoe (a 1 of 1), which was given to NBA basketball star, Lebron James. He wore the shoe and posted it on social media, which set the internet on fire! Grammy award-winning artist even got in touch with Mike to get her own pair.\n\nThe missing context here is that Nike and Converse have never collaborated before. So, seeing the brand assets merged into one makes this bootleg an instant classic. What a great idea and superb execution by China Town Market!\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__qwN1
+                      )}
+                    >
+                      {"What we love about this cross marketing project"}
+                    </h2>
+                  }
+                  <React.Fragment>
+                    {
+                      "\nHey there!\n\nWe really appreciate the DIY spirit of this collaboration. Just to clarify, this is not your typical brand collaboration. Nike didn't officially partner up, and we don't usually endorse guerrilla marketing like this. However, there's no denying that the results were impressive and really put China Town Market on the map.\n\nIn fact, the brand started to outgrow its insular beginnings and was even questioned by the wider Chinese community, which led to a reconsideration of its name.\n\nInspiring story and great outcomes make this a great example of using brand juice to your advantage! \n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__uvH9W
+                      )}
+                    >
+                      {"Where can I find out more?"}
+                    </h2>
+                  }
+                  <React.Fragment>
+                    {"\nYou can read a little more "}
+                  </React.Fragment>
+                  {
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__j24
+                      )}
+                      component={Link}
+                      href={
+                        "https://hypebeast.com/2018/6/lebron-james-converse-chuck-taylor-bootleg-swoosh-sneaker-chinatown-market" as const
+                      }
+                      platform={"nextjs"}
+                    >
+                      {"here"}
+                    </p.PlasmicLink>
+                  }
+                  <React.Fragment>{"\n\n"}</React.Fragment>
+                  {
+                    <h1
+                      data-plasmic-name={"nomadlistXBufferXRemoteOk"}
+                      data-plasmic-override={
+                        overrides.nomadlistXBufferXRemoteOk
+                      }
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.nomadlistXBufferXRemoteOk
+                      )}
+                    >
+                      {"Nomadlist x Buffer x RemoteOK"}
+                    </h1>
+                  }
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__iosJ2
+                      )}
+                    >
+                      {"What was the brand partnership?\n"}
+                    </h2>
+                  }
+                  <React.Fragment>
+                    {
+                      "Nomadlist is an awesome online directory that lists cities and countries perfect for digital nomads to work from. It's really cool, if we do say so ourselves. Not only that, it's a multifaceted brand that inspired the creation of a community where nomads can arrange meetups and connect with like-minded people.\n\nRemoteOK is a spin-off from the success of Nomadlist. It's a remote work job board that specifically targets users with digital-based careers.\n\nBuffer is a fantastic social media automation tool that helps businesses and professionals manage their online presence. It focuses on enabling users to plan, schedule, and publish posts across multiple social media platforms.\n\nClearly, we can see that these audiences align perfectly. People who use social media and would pay for Buffer would definitely be interested in the digital nomad lifestyle and the state of remote working. Similarly, many digital nomads use and post on social media and would be interested in the longevity of their current lifestyle.\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__pvSAh
+                      )}
+                    >
+                      {"What was the brand collaboration\n"}
+                    </h2>
+                  }
+                  <React.Fragment>
+                    {
+                      "The two brands worked together on a really cool project - a state of remote work report! They conducted a survey of over 2,000 remote workers from around the world to explore both the pros and cons of remote work as we head into 2022. \n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2___5Mq5J
+                      )}
+                    >
+                      {"Why we're excited about this cross marketing project"}
+                    </h2>
+                  }
+                  <React.Fragment>
+                    {
+                      "\nWe love this brand collaboration because it's simple yet effective; just produce a report on something that your audience is interested in. But what really makes this brand partnership special is how well our audiences align with each other. Of course, there may be some people who haven't heard of Nomadlist yet, and vice versa. But that's okay! This type of partnership is a great opportunity for all parties involved to raise awareness and attract qualified leads to our brands.\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__w6Eng
+                      )}
+                    >
+                      {"Where can I find out more?"}
+                    </h2>
+                  }
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__zMnjI
+                      )}
+                      component={Link}
+                      href={"https://buffer.com/state-of-remote-work" as const}
+                      platform={"nextjs"}
+                    >
+                      {"State of Remote Work Report"}
+                    </p.PlasmicLink>
+                  }
+                  <React.Fragment>{"\n\n"}</React.Fragment>
+                </React.Fragment>
+              </div>
+            </div>
 
             <div className={classNames(projectcss.all, sty.freeBox__cM9Fv)}>
               <div
@@ -473,8 +777,12 @@ const PlasmicDescendants = {
     "root",
     "hectoNav",
     "leadTitle",
+    "h1",
     "cmsDataLoader",
     "head",
+    "penguinXPhiladelphia",
+    "nikeXConverseXChinaTownMarket",
+    "nomadlistXBufferXRemoteOk",
     "columns",
     "column",
     "button",
@@ -483,8 +791,12 @@ const PlasmicDescendants = {
   ],
   hectoNav: ["hectoNav"],
   leadTitle: ["leadTitle"],
+  h1: ["h1"],
   cmsDataLoader: ["cmsDataLoader", "head"],
   head: ["head"],
+  penguinXPhiladelphia: ["penguinXPhiladelphia"],
+  nikeXConverseXChinaTownMarket: ["nikeXConverseXChinaTownMarket"],
+  nomadlistXBufferXRemoteOk: ["nomadlistXBufferXRemoteOk"],
   columns: ["columns", "column", "button", "svg"],
   column: ["column", "button", "svg"],
   button: ["button", "svg"],
@@ -498,8 +810,12 @@ type NodeDefaultElementType = {
   root: "div";
   hectoNav: typeof HectoNav;
   leadTitle: "h1";
+  h1: "h1";
   cmsDataLoader: typeof CmsQueryRepeater;
   head: typeof PlasmicHead;
+  penguinXPhiladelphia: "h1";
+  nikeXConverseXChinaTownMarket: "h1";
+  nomadlistXBufferXRemoteOk: "h1";
   columns: "div";
   column: "div";
   button: typeof Button;
@@ -570,8 +886,14 @@ export const PlasmicBrandCollaborationsList = Object.assign(
     // Helper components rendering sub-elements
     hectoNav: makeNodeComponent("hectoNav"),
     leadTitle: makeNodeComponent("leadTitle"),
+    h1: makeNodeComponent("h1"),
     cmsDataLoader: makeNodeComponent("cmsDataLoader"),
     head: makeNodeComponent("head"),
+    penguinXPhiladelphia: makeNodeComponent("penguinXPhiladelphia"),
+    nikeXConverseXChinaTownMarket: makeNodeComponent(
+      "nikeXConverseXChinaTownMarket"
+    ),
+    nomadlistXBufferXRemoteOk: makeNodeComponent("nomadlistXBufferXRemoteOk"),
     columns: makeNodeComponent("columns"),
     column: makeNodeComponent("column"),
     button: makeNodeComponent("button"),
