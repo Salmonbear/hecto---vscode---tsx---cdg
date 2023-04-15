@@ -24,6 +24,19 @@
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-top: 0px;
 }
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background: none;
+  min-width: 0;
+  min-height: 0;
+  padding: 0em 0px;
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .root {
     width: 100%;
@@ -32,6 +45,12 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .root > :global(.__wab_flex-container) {
+    min-width: 0;
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    width: 100%;
     min-width: 0;
   }
 }
@@ -109,6 +128,14 @@
   > img {
   margin-left: 64px;
 }
+.freeBox___7DL75 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  max-width: 1280px;
+  width: 100%;
+  min-width: 0;
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .freeBox___7DL75 {
     display: flex;
@@ -141,6 +168,16 @@
     margin-top: 32px;
   }
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox___7DL75 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
+    align-content: stretch;
+  }
+}
 .freeBox__pwmsv {
   display: flex;
   flex-direction: column;
@@ -164,6 +201,13 @@
   > img {
   margin-top: 32px;
 }
+.freeBox__pwmsv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  min-width: 0;
+}
 .freeBox___2Bsss {
   display: flex;
   position: relative;
@@ -183,6 +227,11 @@
   > picture
   > img {
   margin-top: 20px;
+}
+.freeBox___2Bsss {
+  display: flex;
+  position: relative;
+  flex-direction: column;
 }
 .h1__rZvMn {
   font-family: "Poppins", sans-serif;
@@ -282,7 +331,7 @@
   min-width: 0;
   padding: 4.17em 15px 5em;
 }
-.cmsDataLoader:global(.__wab_instance) {
+.cmsDataFetcher:global(.__wab_instance) {
   width: 1067px;
   display: grid;
   max-width: 100%;
@@ -426,18 +475,18 @@
   width: 236px;
   font-weight: 600;
 }
-.text__xzHzY {
+.text__cYyfa {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 100%;
   min-width: 0;
 }
-.text__qt2Ht {
+.text__lNBhf {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 100%;
   min-width: 0;
 }
 .columns___65Mi9 {

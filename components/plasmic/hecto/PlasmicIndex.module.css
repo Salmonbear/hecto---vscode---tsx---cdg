@@ -26,6 +26,21 @@
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-top: 0px;
 }
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 0px;
+  padding-bottom: 0em;
+  padding-left: 0px;
+  background: none;
+  min-width: 0;
+  min-height: 0;
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .root {
     width: 100%;
@@ -34,6 +49,12 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .root > :global(.__wab_flex-container) {
+    min-width: 0;
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    width: 100%;
     min-width: 0;
   }
 }
@@ -117,6 +138,14 @@
   > img {
   margin-left: 64px;
 }
+.freeBox__fclkg {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  max-width: 1280px;
+  width: 100%;
+  min-width: 0;
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .freeBox__fclkg {
     display: flex;
@@ -149,6 +178,16 @@
     margin-top: 32px;
   }
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__fclkg {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
+    align-content: stretch;
+  }
+}
 .freeBox__i8Qbf {
   display: flex;
   flex-direction: column;
@@ -172,6 +211,13 @@
   > img {
   margin-top: 32px;
 }
+.freeBox__i8Qbf {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  min-width: 0;
+}
 .freeBox__c8Btc {
   display: flex;
   position: relative;
@@ -191,6 +237,11 @@
   > picture
   > img {
   margin-top: 20px;
+}
+.freeBox__c8Btc {
+  display: flex;
+  position: relative;
+  flex-direction: column;
 }
 .h1__fiPqK {
   font-family: "Poppins", sans-serif;
@@ -264,6 +315,21 @@
   > picture
   > img {
   margin-left: 20px;
+}
+.freeBox__altd {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  align-self: flex-start;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  min-width: 0;
+  padding: 8px;
 }
 .link {
   position: relative;
@@ -418,6 +484,21 @@
   > img {
   margin-left: 20px;
 }
+.freeBox___8Pphq {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  align-self: flex-start;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  min-width: 0;
+  padding: 8px;
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .freeBox___8Pphq {
     display: flex;
@@ -447,6 +528,18 @@
     > picture
     > img {
     margin-top: 0px;
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox___8Pphq {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: stretch;
+    overflow: auto;
+    align-self: center;
+    justify-content: flex-start;
   }
 }
 .h2__mbr1C {
@@ -653,6 +746,22 @@
   > picture
   > img {
   margin-top: 20px;
+}
+.freeBox__eL2WR {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  align-self: center;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  min-width: 0;
+  padding: 0px;
+  border-style: none;
 }
 .h1__x2Sbm {
   font-family: "Poppins", sans-serif;
@@ -894,6 +1003,22 @@
   > img {
   margin-top: 20px;
 }
+.freeBox__e5Xc {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  align-self: center;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  min-width: 0;
+  padding: 0px;
+  border-style: none;
+}
 .h1__gdjgC {
   font-family: "Poppins", sans-serif;
   font-size: 50px;
@@ -1002,6 +1127,23 @@
   > picture
   > img {
   margin-top: 20px;
+}
+.freeBox___1Knur {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  align-self: center;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  margin-bottom: 35px;
+  min-width: 0;
+  padding: 0px;
+  border-style: none;
 }
 .h1__cD1 {
   font-family: "Poppins", sans-serif;

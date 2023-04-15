@@ -25,6 +25,20 @@
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-top: 0px;
 }
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(0deg, #edf8ff 55%, #ffffff 100%) 0% 0% / 100% 100%
+    repeat;
+  min-width: 0;
+  min-height: 0;
+  padding: 0em 0px;
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .root {
     width: 100%;
@@ -33,6 +47,12 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .root > :global(.__wab_flex-container) {
+    min-width: 0;
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    width: 100%;
     min-width: 0;
   }
 }
@@ -76,9 +96,11 @@
   max-width: 557px;
   font-size: 30px;
   text-align: left;
-  padding: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
-.cmsDataLoader:global(.__wab_instance) {
+.cmsDataFetcher:global(.__wab_instance) {
   width: 100%;
   display: flex;
   max-width: 100%;
@@ -92,18 +114,18 @@
   object-fit: cover;
   position: relative;
 }
-.text__lr3D0 {
+.text__cn5K6 {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 100%;
   min-width: 0;
 }
-.text__fPlHa {
+.text__pQwTg {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 100%;
   min-width: 0;
 }
 .freeBox__bd16Z {

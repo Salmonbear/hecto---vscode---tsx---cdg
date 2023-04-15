@@ -76,7 +76,11 @@
         {
           "id": "SAEWraOT2YV",
           "name": "Checkbox",
-          "componentImportPath": "antd/lib/checkbox/Checkbox"
+          "componentImportPath": "antd/lib/checkbox/Checkbox",
+          "helper": {
+            "name": "checkboxHelpers",
+            "importPath": "@plasmicpkgs/antd/skinny/registerCheckbox"
+          }
         },
         {
           "id": "m5zFS-kMOL-",
@@ -116,22 +120,38 @@
         {
           "id": "tO9wrxr8Nbb",
           "name": "Input",
-          "componentImportPath": "antd/lib/input"
+          "componentImportPath": "antd/lib/input",
+          "helper": {
+            "name": "inputHelpers",
+            "importPath": "@plasmicpkgs/antd/skinny/registerInput"
+          }
         },
         {
           "id": "ZJIPHLoTjkN",
           "name": "TextArea",
-          "componentImportPath": "antd/lib/input/TextArea"
+          "componentImportPath": "antd/lib/input/TextArea",
+          "helper": {
+            "name": "inputHelpers",
+            "importPath": "@plasmicpkgs/antd/skinny/registerInput"
+          }
         },
         {
           "id": "zDcn8vsMldu",
           "name": "Search",
-          "componentImportPath": "antd/lib/input/Search"
+          "componentImportPath": "antd/lib/input/Search",
+          "helper": {
+            "name": "inputHelpers",
+            "importPath": "@plasmicpkgs/antd/skinny/registerInput"
+          }
         },
         {
           "id": "fTDg0FM1tnD",
           "name": "Password",
-          "componentImportPath": "antd/lib/input/Password"
+          "componentImportPath": "antd/lib/input/Password",
+          "helper": {
+            "name": "inputHelpers",
+            "importPath": "@plasmicpkgs/antd/skinny/registerInput"
+          }
         },
         {
           "id": "uZueUXuqePq",
@@ -178,8 +198,7 @@
           "name": "TableValue",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -213,8 +232,7 @@
           "name": "DataProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "YUiM7yqBWAqsh8KSnrdj7",
@@ -238,8 +256,7 @@
           "name": "GraphqlFetcher",
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
@@ -258,8 +275,7 @@
           "name": "NavigationBar",
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "hjKYmYi6HMwK6TRyk7ew5R",
@@ -303,8 +319,7 @@
           "name": "CmsQueryRepeater",
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "jLAmXkGdPPYDvKpL9j3cJd",
@@ -482,6 +497,19 @@
           "cssFilePath": "plasmic/hecto/PlasmicFooter.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "_4O1QdxW3S1",
+          "name": "Pricing",
+          "type": "managed",
+          "projectId": "jLAmXkGdPPYDvKpL9j3cJd",
+          "renderModuleFilePath": "plasmic/hecto/PlasmicPricing.tsx",
+          "importSpec": {
+            "modulePath": "../pages/pricing.tsx"
+          },
+          "cssFilePath": "plasmic/hecto/PlasmicPricing.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -639,6 +667,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.216",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.216/dist/plasmic.schema.json"
+  "cliVersion": "0.1.258",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.258/dist/plasmic.schema.json"
 }
