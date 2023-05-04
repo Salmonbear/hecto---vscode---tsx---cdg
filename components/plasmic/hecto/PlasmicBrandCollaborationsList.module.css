@@ -114,14 +114,14 @@
   object-fit: cover;
   position: relative;
 }
-.text__cn5K6 {
+.text__xXcG {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
-.text__pQwTg {
+.text__gPxMa {
   position: relative;
   width: 100%;
   height: auto;
@@ -175,7 +175,7 @@
   padding: 53px 8px 8px;
 }
 .columns > :nth-child(1n + 1) {
-  width: calc((100% - 1 * 0px) * 12 / 12);
+  width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns {
@@ -188,7 +188,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns > :nth-child(1n + 1) {
-    width: calc((100% - 1 * 0px) * 12 / 12);
+    width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
   }
 }
 .column {

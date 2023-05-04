@@ -344,7 +344,7 @@ function PlasmicResources__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__cYyfa
+                              sty.text__g2HI
                             )}
                           >
                             {"No matching published entries found."}
@@ -364,7 +364,7 @@ function PlasmicResources__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__lNBhf
+                              sty.text__l2Wiw
                             )}
                           >
                             {"Loading..."}

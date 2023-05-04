@@ -288,7 +288,7 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__hQb8
+                          sty.text__vLn3U
                         )}
                       >
                         {"No matching published entries found."}
@@ -306,7 +306,7 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___5Q0Xu
+                          sty.text__jUgU9
                         )}
                       >
                         {"Loading..."}

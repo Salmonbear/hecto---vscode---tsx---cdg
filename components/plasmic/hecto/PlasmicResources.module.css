@@ -117,6 +117,7 @@
   min-width: 0;
   margin-left: calc(0px - 64px);
   width: calc(100% + 64px);
+  --plsmc-col-gap: 64px;
 }
 .freeBox___7DL75 > :global(.__wab_flex-container) > *,
 .freeBox___7DL75 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
@@ -151,6 +152,7 @@
     align-content: stretch;
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
+    --plsmc-col-gap: 0px;
     margin-top: calc(0px - 32px);
     height: calc(100% + 32px);
   }
@@ -297,7 +299,7 @@
   padding: 0px;
 }
 .features > :nth-child(1n + 1) {
-  width: calc((100% - 1 * 0px) * 12 / 12);
+  width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .features {
@@ -311,7 +313,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .features > :nth-child(1n + 1) {
-    width: calc((100% - 1 * 0px) * 12 / 12);
+    width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
   }
 }
 .blogColumn {
@@ -365,7 +367,7 @@
   padding: 8px;
 }
 .columns__jWvcx > :nth-child(1n + 1) {
-  width: calc((100% - 1 * 0px) * 12 / 12);
+  width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns__jWvcx {
@@ -378,7 +380,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns__jWvcx > :nth-child(1n + 1) {
-    width: calc((100% - 1 * 0px) * 12 / 12);
+    width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
   }
 }
 .column__mlqV0 {
@@ -410,10 +412,10 @@
   padding: 0px;
 }
 .columns__uy6Cr > :nth-child(2n + 1) {
-  width: calc((100% - 2 * 0px) * 6 / 12);
+  width: calc((100% - 2 * var(--plsmc-col-gap, 0px)) * 6 / 12);
 }
 .columns__uy6Cr > :nth-child(2n + 2) {
-  width: calc((100% - 2 * 0px) * 6 / 12);
+  width: calc((100% - 2 * var(--plsmc-col-gap, 0px)) * 6 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns__uy6Cr {
@@ -426,7 +428,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns__uy6Cr > :nth-child(1n + 1) {
-    width: calc((100% - 1 * 0px) * 12 / 12);
+    width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
   }
 }
 .column__bj2Xg {
@@ -475,14 +477,14 @@
   width: 236px;
   font-weight: 600;
 }
-.text__cYyfa {
+.text__g2HI {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
-.text__lNBhf {
+.text__l2Wiw {
   position: relative;
   width: 100%;
   height: auto;
@@ -505,7 +507,7 @@
   padding: 0px;
 }
 .columns___65Mi9 > :nth-child(1n + 1) {
-  width: calc((100% - 1 * 0px) * 12 / 12);
+  width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns___65Mi9 {
@@ -518,7 +520,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns___65Mi9 > :nth-child(1n + 1) {
-    width: calc((100% - 1 * 0px) * 12 / 12);
+    width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
   }
 }
 .outer {
@@ -552,10 +554,10 @@
   padding: 0px;
 }
 .container > :nth-child(2n + 1) {
-  width: calc((100% - 2 * 0px) * 9 / 12);
+  width: calc((100% - 2 * var(--plsmc-col-gap, 0px)) * 9 / 12);
 }
 .container > :nth-child(2n + 2) {
-  width: calc((100% - 2 * 0px) * 3 / 12);
+  width: calc((100% - 2 * var(--plsmc-col-gap, 0px)) * 3 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .container {
@@ -568,7 +570,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .container > :nth-child(1n + 1) {
-    width: calc((100% - 1 * 0px) * 12 / 12);
+    width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
   }
 }
 .column__fUvPn {
@@ -691,7 +693,7 @@
   padding: 53px 8px 8px;
 }
 .columns___8Y8Fy > :nth-child(1n + 1) {
-  width: calc((100% - 1 * 0px) * 12 / 12);
+  width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns___8Y8Fy {
@@ -704,7 +706,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns___8Y8Fy > :nth-child(1n + 1) {
-    width: calc((100% - 1 * 0px) * 12 / 12);
+    width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
   }
 }
 .column__kzkPi {

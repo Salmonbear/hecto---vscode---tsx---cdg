@@ -178,7 +178,7 @@ function PlasmicBlogArticle__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__aa1XN
+                        sty.text__gtWgM
                       )}
                     >
                       {"No matching published entries found."}
@@ -207,7 +207,7 @@ function PlasmicBlogArticle__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text___5Qfga
+                        sty.text__zHzLh
                       )}
                     >
                       {"Loading..."}

@@ -112,19 +112,27 @@
   height: 100%;
   max-width: 100%;
   overflow: auto;
+  flex-wrap: wrap;
+  max-height: 1000px;
+  min-height: 500px;
+  flex-grow: 1;
   min-width: 0;
-  min-height: 0;
   padding: 8px;
 }
 .cmsDataFetcher:global(.__wab_instance) {
-  width: 341px;
-  display: flex;
+  width: 1403px;
+  display: grid;
   max-width: 100%;
   object-fit: cover;
   position: relative;
   align-self: center;
-  flex-direction: row;
   text-align: left;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  grid-auto-rows: auto;
+  grid-auto-columns: 1fr;
   flex-shrink: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
@@ -171,7 +179,7 @@
   padding: 8px;
 }
 .columns__ueaC0 > :nth-child(1n + 1) {
-  width: calc((100% - 1 * 0px) * 12 / 12);
+  width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns__ueaC0 {
@@ -184,7 +192,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns__ueaC0 > :nth-child(1n + 1) {
-    width: calc((100% - 1 * 0px) * 12 / 12);
+    width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
   }
 }
 .column__iWKsu {
@@ -202,7 +210,7 @@
 .img {
   position: relative;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   height: 100%;
   width: 212px;
   flex-grow: 0;
@@ -210,10 +218,10 @@
   min-height: 0;
 }
 .img > picture > img {
-  object-fit: contain;
+  object-fit: cover;
 }
 .img > :global(.__wab_img-spacer) > img {
-  object-fit: contain;
+  object-fit: cover;
 }
 .h2__vWgi3 {
   position: relative;
@@ -224,14 +232,14 @@
   min-width: 0;
   padding: 15px;
 }
-.text__hQb8 {
+.text__vLn3U {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
-.text___5Q0Xu {
+.text__jUgU9 {
   position: relative;
   width: 100%;
   height: auto;
@@ -268,7 +276,7 @@
   padding: 53px 8px 8px;
 }
 .columns__xAh9V > :nth-child(1n + 1) {
-  width: calc((100% - 1 * 0px) * 12 / 12);
+  width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns__xAh9V {
@@ -281,7 +289,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns__xAh9V > :nth-child(1n + 1) {
-    width: calc((100% - 1 * 0px) * 12 / 12);
+    width: calc((100% - 1 * var(--plsmc-col-gap, 0px)) * 12 / 12);
   }
 }
 .column__vundk {

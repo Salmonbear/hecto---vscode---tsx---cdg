@@ -157,7 +157,7 @@ function PlasmicHectoNav__RenderFunc(props: {
       closeButton={
         <p.PlasmicImg
           alt={""}
-          className={classNames(sty.img___6L1Ij)}
+          className={classNames(sty.img__oqXOy)}
           displayHeight={"auto" as const}
           displayMaxHeight={"none" as const}
           displayMaxWidth={"none" as const}
@@ -220,7 +220,7 @@ function PlasmicHectoNav__RenderFunc(props: {
               sty.pricing
             )}
             component={Link}
-            href={"https://app.hecto.io/pricing" as const}
+            href={`/pricing`}
             platform={"nextjs"}
           >
             {"Pricing"}
@@ -265,7 +265,7 @@ function PlasmicHectoNav__RenderFunc(props: {
       openButton={
         <p.PlasmicImg
           alt={""}
-          className={classNames(sty.img__hJLuA)}
+          className={classNames(sty.img__dGzG)}
           displayHeight={"auto" as const}
           displayMaxHeight={"none" as const}
           displayMaxWidth={"none" as const}

@@ -68,7 +68,6 @@ export type PlasmicPricing__OverridesType = {
   features?: p.Flex<"section">;
   container4?: p.Flex<"div">;
   outerRow2?: p.Flex<"div">;
-  row2?: p.Flex<"div">;
   outer?: p.Flex<"div">;
   container?: p.Flex<"div">;
   svg?: p.Flex<"svg">;
@@ -309,38 +308,6 @@ function PlasmicPricing__RenderFunc(props: {
                       data-plasmic-override={overrides.outerRow2}
                       className={classNames(projectcss.all, sty.outerRow2)}
                     >
-                      <div
-                        data-plasmic-name={"row2"}
-                        data-plasmic-override={overrides.row2}
-                        className={classNames(projectcss.all, sty.row2)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column___2Klxd
-                          )}
-                        >
-                          <h1
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.h1,
-                              projectcss.__wab_text,
-                              sty.h1__tNgC
-                            )}
-                          >
-                            <React.Fragment>
-                              <span
-                                className={
-                                  "plasmic_default__all plasmic_default__span"
-                                }
-                                style={{ color: "#FFFFFF" }}
-                              >
-                                {"£0 / month"}
-                              </span>
-                            </React.Fragment>
-                          </h1>
-                        </div>
-                      </div>
                       <div
                         className={classNames(
                           projectcss.all,
@@ -670,6 +637,25 @@ function PlasmicPricing__RenderFunc(props: {
                           </div>
                         </div>
                       </div>
+                      <h1
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h1,
+                          projectcss.__wab_text,
+                          sty.h1__tNgC
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "#FFFFFF" }}
+                          >
+                            {"£0 / month"}
+                          </span>
+                        </React.Fragment>
+                      </h1>
                     </div>
                   </div>
                 </div>
@@ -756,7 +742,7 @@ function PlasmicPricing__RenderFunc(props: {
                         className={"plasmic_default__all plasmic_default__span"}
                         style={{ color: "#0506CF" }}
                       >
-                        {"Ready to boost your income?"}
+                        {"Ready to boost your revenue?"}
                       </span>
                     </React.Fragment>
                   </h2>
@@ -887,7 +873,6 @@ const PlasmicDescendants = {
     "features",
     "container4",
     "outerRow2",
-    "row2",
     "outer",
     "container",
     "svg",
@@ -896,10 +881,9 @@ const PlasmicDescendants = {
   ],
   embedHtml: ["embedHtml"],
   hectoNav: ["hectoNav"],
-  features: ["features", "container4", "outerRow2", "row2"],
-  container4: ["container4", "outerRow2", "row2"],
-  outerRow2: ["outerRow2", "row2"],
-  row2: ["row2"],
+  features: ["features", "container4", "outerRow2"],
+  container4: ["container4", "outerRow2"],
+  outerRow2: ["outerRow2"],
   outer: ["outer", "container"],
   container: ["container"],
   svg: ["svg"],
@@ -916,7 +900,6 @@ type NodeDefaultElementType = {
   features: "section";
   container4: "div";
   outerRow2: "div";
-  row2: "div";
   outer: "div";
   container: "div";
   svg: "svg";
@@ -989,7 +972,6 @@ export const PlasmicPricing = Object.assign(
     features: makeNodeComponent("features"),
     container4: makeNodeComponent("container4"),
     outerRow2: makeNodeComponent("outerRow2"),
-    row2: makeNodeComponent("row2"),
     outer: makeNodeComponent("outer"),
     container: makeNodeComponent("container"),
     svg: makeNodeComponent("svg"),
