@@ -46,6 +46,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_hecto.module.css"; // plasmic-import: jLAmXkGdPPYDvKpL9j3cJd/projectcss
 import sty from "./PlasmicSearch.module.css"; // plasmic-import: HLCMdt64_9V/css
 
+createPlasmicElementProxy;
+
 export type PlasmicSearch__VariantMembers = {};
 export type PlasmicSearch__VariantsArgs = {};
 type VariantPropType = keyof PlasmicSearch__VariantsArgs;
@@ -57,7 +59,7 @@ export const PlasmicSearch__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSearch__OverridesType = {
   root?: p.Flex<"div">;
-  head?: p.Flex<typeof PlasmicHead>;
+  pageMetadataOverride?: p.Flex<typeof PlasmicHead>;
   hectoNav?: p.Flex<typeof HectoNav>;
   searchCall?: p.Flex<typeof DataFetcher>;
   img?: p.Flex<typeof p.PlasmicImg>;
@@ -93,20 +95,20 @@ function PlasmicSearch__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <React.Fragment>
@@ -150,9 +152,9 @@ function PlasmicSearch__RenderFunc(props: {
             )}
           >
             <PlasmicHead
-              data-plasmic-name={"head"}
-              data-plasmic-override={overrides.head}
-              className={classNames("__wab_instance", sty.head)}
+              data-plasmic-name={"pageMetadataOverride"}
+              data-plasmic-override={overrides.pageMetadataOverride}
+              className={classNames("__wab_instance", sty.pageMetadataOverride)}
               title={"The Best Newsletters" as const}
             />
 
@@ -195,7 +197,10 @@ function PlasmicSearch__RenderFunc(props: {
                             try {
                               return $ctx.newsletterList.response.results;
                             } catch (e) {
-                              if (e instanceof TypeError) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
                                 return [];
                               }
                               throw e;
@@ -238,7 +243,11 @@ function PlasmicSearch__RenderFunc(props: {
                                       try {
                                         return currentItem["Profile Image"];
                                       } catch (e) {
-                                        if (e instanceof TypeError) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
                                           return undefined;
                                         }
                                         throw e;
@@ -261,16 +270,22 @@ function PlasmicSearch__RenderFunc(props: {
                                     sty.h2__vdpeD
                                   )}
                                 >
-                                  {(() => {
-                                    try {
-                                      return currentItem["Business Name"];
-                                    } catch (e) {
-                                      if (e instanceof TypeError) {
-                                        return "Enter some text";
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return currentItem["Business Name"];
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "Enter some text";
+                                        }
+                                        throw e;
                                       }
-                                      throw e;
-                                    }
-                                  })()}
+                                    })()}
+                                  </React.Fragment>
                                 </h2>
                                 <h3
                                   data-plasmic-name={"h3"}
@@ -282,16 +297,22 @@ function PlasmicSearch__RenderFunc(props: {
                                     sty.h3
                                   )}
                                 >
-                                  {(() => {
-                                    try {
-                                      return currentItem["Summary - Short"];
-                                    } catch (e) {
-                                      if (e instanceof TypeError) {
-                                        return "Enter some text";
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return currentItem["Summary - Short"];
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "Enter some text";
+                                        }
+                                        throw e;
                                       }
-                                      throw e;
-                                    }
-                                  })()}
+                                    })()}
+                                  </React.Fragment>
                                 </h3>
                                 <div
                                   className={classNames(
@@ -300,16 +321,22 @@ function PlasmicSearch__RenderFunc(props: {
                                     sty.text__v4GjG
                                   )}
                                 >
-                                  {(() => {
-                                    try {
-                                      return currentItem["Business Name"];
-                                    } catch (e) {
-                                      if (e instanceof TypeError) {
-                                        return "Enter some text";
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return currentItem["Business Name"];
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "Enter some text";
+                                        }
+                                        throw e;
                                       }
-                                      throw e;
-                                    }
-                                  })()}
+                                    })()}
+                                  </React.Fragment>
                                 </div>
                                 <div
                                   className={classNames(
@@ -318,16 +345,22 @@ function PlasmicSearch__RenderFunc(props: {
                                     sty.text__oGnV
                                   )}
                                 >
-                                  {(() => {
-                                    try {
-                                      return currentItem["Business Name"];
-                                    } catch (e) {
-                                      if (e instanceof TypeError) {
-                                        return "Enter some text";
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return currentItem["Business Name"];
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "Enter some text";
+                                        }
+                                        throw e;
                                       }
-                                      throw e;
-                                    }
-                                  })()}
+                                    })()}
+                                  </React.Fragment>
                                 </div>
                               </div>
                             </div>
@@ -387,6 +420,7 @@ function PlasmicSearch__RenderFunc(props: {
                         className={classNames("__wab_instance", sty.button)}
                         color={"blue" as const}
                         link={"#" as const}
+                        submitsForm={true}
                       >
                         <div
                           className={classNames(
@@ -422,7 +456,7 @@ function PlasmicSearch__RenderFunc(props: {
                       sty.text__aGbxC
                     )}
                   >
-                    {"© Hecto. All rights reserved"}
+                    {"\u00a9 Hecto. All rights reserved"}
                   </div>
                   <p.PlasmicLink
                     data-plasmic-name={"link"}
@@ -485,7 +519,7 @@ function PlasmicSearch__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "head",
+    "pageMetadataOverride",
     "hectoNav",
     "searchCall",
     "img",
@@ -496,7 +530,7 @@ const PlasmicDescendants = {
     "footerBottom",
     "link"
   ],
-  head: ["head"],
+  pageMetadataOverride: ["pageMetadataOverride"],
   hectoNav: ["hectoNav"],
   searchCall: ["searchCall", "img", "h3"],
   img: ["img"],
@@ -509,10 +543,10 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  head: typeof PlasmicHead;
+  pageMetadataOverride: typeof PlasmicHead;
   hectoNav: typeof HectoNav;
   searchCall: typeof DataFetcher;
   img: typeof p.PlasmicImg;
@@ -584,7 +618,7 @@ export const PlasmicSearch = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    head: makeNodeComponent("head"),
+    pageMetadataOverride: makeNodeComponent("pageMetadataOverride"),
     hectoNav: makeNodeComponent("hectoNav"),
     searchCall: makeNodeComponent("searchCall"),
     img: makeNodeComponent("img"),

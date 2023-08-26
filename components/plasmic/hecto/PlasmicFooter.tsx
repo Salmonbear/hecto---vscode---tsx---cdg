@@ -42,6 +42,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_hecto.module.css"; // plasmic-import: jLAmXkGdPPYDvKpL9j3cJd/projectcss
 import sty from "./PlasmicFooter.module.css"; // plasmic-import: Iw1cdeIou4/css
 
+createPlasmicElementProxy;
+
 export type PlasmicFooter__VariantMembers = {};
 export type PlasmicFooter__VariantsArgs = {};
 type VariantPropType = keyof PlasmicFooter__VariantsArgs;
@@ -81,20 +83,20 @@ function PlasmicFooter__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <div
@@ -119,7 +121,7 @@ function PlasmicFooter__RenderFunc(props: {
             sty.text__qRh5Y
           )}
         >
-          {"© Hecto . All rights reserved"}
+          {"\u00a9 Hecto . All rights reserved"}
         </div>
         <p.PlasmicLink
           className={classNames(projectcss.all, projectcss.a, sty.link__z3MpL)}
@@ -211,7 +213,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   footerBottom: "div";
 };

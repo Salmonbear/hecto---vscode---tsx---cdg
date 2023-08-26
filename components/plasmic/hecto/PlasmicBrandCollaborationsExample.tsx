@@ -51,6 +51,8 @@ import sty from "./PlasmicBrandCollaborationsExample.module.css"; // plasmic-imp
 
 import ArrowRightsvgIcon from "./icons/PlasmicIcon__ArrowRightsvg"; // plasmic-import: g1j_XxrLjbNK/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicBrandCollaborationsExample__VariantMembers = {};
 export type PlasmicBrandCollaborationsExample__VariantsArgs = {};
 type VariantPropType = keyof PlasmicBrandCollaborationsExample__VariantsArgs;
@@ -71,7 +73,7 @@ export type PlasmicBrandCollaborationsExample__OverridesType = {
   link?: p.Flex<"a"> & Partial<LinkProps>;
   leadTitle?: p.Flex<"h1">;
   blogBody?: p.Flex<"div">;
-  head?: p.Flex<typeof PlasmicHead>;
+  pageMetadataOverride?: p.Flex<typeof PlasmicHead>;
   button?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
   footerBottom?: p.Flex<"div">;
@@ -102,20 +104,20 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantskILw5UiAaS1UF()
@@ -195,7 +197,10 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                 try {
                   return $ctx.params.slug;
                 } catch (e) {
-                  if (e instanceof TypeError) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
                     return undefined;
                   }
                   throw e;
@@ -283,16 +288,22 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                           sty.leadTitle
                         )}
                       >
-                        {(() => {
-                          try {
-                            return $ctx.plasmicCmsBrandCollabsItem.data.h1Title;
-                          } catch (e) {
-                            if (e instanceof TypeError) {
-                              return undefined;
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.plasmicCmsBrandCollabsItem.data
+                                .h1Title;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()}
+                          })()}
+                        </React.Fragment>
                       </h1>
                       <h2
                         className={classNames(
@@ -302,17 +313,22 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                           sty.h2__uQ9E
                         )}
                       >
-                        {(() => {
-                          try {
-                            return $ctx.plasmicCmsBrandCollabsItem.data
-                              .h2Subtitle;
-                          } catch (e) {
-                            if (e instanceof TypeError) {
-                              return "Enter some text";
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.plasmicCmsBrandCollabsItem.data
+                                .h2Subtitle;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Enter some text";
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()}
+                          })()}
+                        </React.Fragment>
                       </h2>
                       <div
                         className={classNames(
@@ -409,7 +425,11 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                                   return $ctx.plasmicCmsBrandCollabsItem.data
                                     .leadImage.url;
                                 } catch (e) {
-                                  if (e instanceof TypeError) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
                                     return undefined;
                                   }
                                   throw e;
@@ -434,7 +454,11 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                                       return $ctx.plasmicCmsBrandCollabsItem
                                         .data.body;
                                     } catch (e) {
-                                      if (e instanceof TypeError) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
                                         return "Enter some text";
                                       }
                                       throw e;
@@ -448,15 +472,21 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                       </div>
                     </div>
                     <PlasmicHead
-                      data-plasmic-name={"head"}
-                      data-plasmic-override={overrides.head}
-                      className={classNames("__wab_instance", sty.head)}
+                      data-plasmic-name={"pageMetadataOverride"}
+                      data-plasmic-override={overrides.pageMetadataOverride}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.pageMetadataOverride
+                      )}
                       description={(() => {
                         try {
                           return $ctx.plasmicCmsBlogArticlesItem.data
                             .metaDescription;
                         } catch (e) {
-                          if (e instanceof TypeError) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
                             return undefined;
                           }
                           throw e;
@@ -470,7 +500,10 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                             $ctx.plasmicCmsBlogArticlesItem.data.h1Heading
                           );
                         } catch (e) {
-                          if (e instanceof TypeError) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
                             return undefined;
                           }
                           throw e;
@@ -531,6 +564,7 @@ function PlasmicBrandCollaborationsExample__RenderFunc(props: {
                       />
                     }
                     showEndIcon={true}
+                    submitsForm={true}
                   >
                     <div
                       className={classNames(
@@ -573,18 +607,24 @@ const PlasmicDescendants = {
     "link",
     "leadTitle",
     "blogBody",
-    "head",
+    "pageMetadataOverride",
     "button",
     "svg",
     "footerBottom",
     "footer"
   ],
   hectoNav: ["hectoNav"],
-  cmsDataFetcher: ["cmsDataFetcher", "link", "leadTitle", "blogBody", "head"],
+  cmsDataFetcher: [
+    "cmsDataFetcher",
+    "link",
+    "leadTitle",
+    "blogBody",
+    "pageMetadataOverride"
+  ],
   link: ["link"],
   leadTitle: ["leadTitle"],
   blogBody: ["blogBody"],
-  head: ["head"],
+  pageMetadataOverride: ["pageMetadataOverride"],
   button: ["button", "svg"],
   svg: ["svg"],
   footerBottom: ["footerBottom", "footer"],
@@ -592,7 +632,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   hectoNav: typeof HectoNav;
@@ -600,7 +640,7 @@ type NodeDefaultElementType = {
   link: "a";
   leadTitle: "h1";
   blogBody: "div";
-  head: typeof PlasmicHead;
+  pageMetadataOverride: typeof PlasmicHead;
   button: typeof Button;
   svg: "svg";
   footerBottom: "div";
@@ -673,7 +713,7 @@ export const PlasmicBrandCollaborationsExample = Object.assign(
     link: makeNodeComponent("link"),
     leadTitle: makeNodeComponent("leadTitle"),
     blogBody: makeNodeComponent("blogBody"),
-    head: makeNodeComponent("head"),
+    pageMetadataOverride: makeNodeComponent("pageMetadataOverride"),
     button: makeNodeComponent("button"),
     svg: makeNodeComponent("svg"),
     footerBottom: makeNodeComponent("footerBottom"),

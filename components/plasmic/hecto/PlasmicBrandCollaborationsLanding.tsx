@@ -49,6 +49,8 @@ import sty from "./PlasmicBrandCollaborationsLanding.module.css"; // plasmic-imp
 
 import ArrowRightsvgIcon from "./icons/PlasmicIcon__ArrowRightsvg"; // plasmic-import: g1j_XxrLjbNK/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicBrandCollaborationsLanding__VariantMembers = {};
 export type PlasmicBrandCollaborationsLanding__VariantsArgs = {};
 type VariantPropType = keyof PlasmicBrandCollaborationsLanding__VariantsArgs;
@@ -99,20 +101,20 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <React.Fragment>
@@ -203,7 +205,10 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                 try {
                   return undefined;
                 } catch (e) {
-                  if (e instanceof TypeError) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
                     return undefined;
                   }
                   throw e;
@@ -337,7 +342,10 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                             $ctx.plasmicCmsBrandCollabsItem.data.slug
                           );
                         } catch (e) {
-                          if (e instanceof TypeError) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
                             return undefined;
                           }
                           throw e;
@@ -374,7 +382,10 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                                 return $ctx.plasmicCmsBrandCollabsItem.data
                                   .leadImage.url;
                               } catch (e) {
-                                if (e instanceof TypeError) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
                                   return undefined;
                                 }
                                 throw e;
@@ -391,16 +402,22 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                           sty.h2__vWgi3
                         )}
                       >
-                        {(() => {
-                          try {
-                            return $ctx.plasmicCmsBrandCollabsItem.data.h1Title;
-                          } catch (e) {
-                            if (e instanceof TypeError) {
-                              return "Enter some text";
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.plasmicCmsBrandCollabsItem.data
+                                .h1Title;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Enter some text";
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()}
+                          })()}
+                        </React.Fragment>
                       </h2>
                     </p.PlasmicLink>
                   )}
@@ -457,6 +474,7 @@ function PlasmicBrandCollaborationsLanding__RenderFunc(props: {
                       />
                     }
                     showEndIcon={true}
+                    submitsForm={true}
                   >
                     <div
                       className={classNames(
@@ -510,7 +528,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   hectoNav: typeof HectoNav;

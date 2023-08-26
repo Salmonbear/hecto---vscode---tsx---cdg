@@ -43,6 +43,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_hecto.module.css"; // plasmic-import: jLAmXkGdPPYDvKpL9j3cJd/projectcss
 import sty from "./PlasmicHectoNav.module.css"; // plasmic-import: 1Xqtr1aGys/css
 
+createPlasmicElementProxy;
+
 export type PlasmicHectoNav__VariantMembers = {};
 export type PlasmicHectoNav__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHectoNav__VariantsArgs;
@@ -85,21 +87,22 @@ function PlasmicHectoNav__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
-  const stateSpecs = React.useMemo(
+
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "variable",
@@ -108,9 +111,14 @@ function PlasmicHectoNav__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   return (
     <NavigationBar
@@ -288,7 +296,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: typeof NavigationBar;
   text: "div";

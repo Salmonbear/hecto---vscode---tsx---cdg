@@ -51,6 +51,8 @@ import sty from "./PlasmicResources.module.css"; // plasmic-import: C5n9cmwHg6f/
 
 import ArrowRightsvgIcon from "./icons/PlasmicIcon__ArrowRightsvg"; // plasmic-import: g1j_XxrLjbNK/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicResources__VariantMembers = {};
 export type PlasmicResources__VariantsArgs = {};
 type VariantPropType = keyof PlasmicResources__VariantsArgs;
@@ -69,7 +71,6 @@ export type PlasmicResources__OverridesType = {
   blogColumn?: p.Flex<"div">;
   cmsDataFetcher?: p.Flex<typeof CmsQueryRepeater>;
   img?: p.Flex<typeof p.PlasmicImg>;
-  cmsEntryField?: p.Flex<typeof CmsRowField>;
   outer?: p.Flex<"div">;
   container?: p.Flex<"div">;
   svg?: p.Flex<"svg">;
@@ -100,20 +101,20 @@ function PlasmicResources__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantskILw5UiAaS1UF()
@@ -390,7 +391,10 @@ function PlasmicResources__RenderFunc(props: {
                             try {
                               return $ctx.plasmicCmsBlogArticlesItem.data.slug;
                             } catch (e) {
-                              if (e instanceof TypeError) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
                                 return "why-sponsor-a-newsletter";
                               }
                               throw e;
@@ -443,14 +447,18 @@ function PlasmicResources__RenderFunc(props: {
                                 )}
                               >
                                 <CmsRowField
-                                  data-plasmic-name={"cmsEntryField"}
-                                  data-plasmic-override={
-                                    overrides.cmsEntryField
-                                  }
                                   className={classNames(
                                     "__wab_instance",
-                                    sty.cmsEntryField
+                                    sty.cmsEntryField__if76W
                                   )}
+                                />
+
+                                <CmsRowField
+                                  className={classNames(
+                                    "__wab_instance",
+                                    sty.cmsEntryField___3WyP
+                                  )}
+                                  field={"metaDescription" as const}
                                 />
                               </div>
                             </div>
@@ -511,6 +519,7 @@ function PlasmicResources__RenderFunc(props: {
                         )}
                         color={"blue" as const}
                         link={"#" as const}
+                        submitsForm={true}
                       >
                         <div
                           className={classNames(
@@ -576,6 +585,7 @@ function PlasmicResources__RenderFunc(props: {
                     }
                     shape={"rounded" as const}
                     showEndIcon={true}
+                    submitsForm={true}
                   >
                     <div
                       className={classNames(
@@ -614,7 +624,6 @@ const PlasmicDescendants = {
     "blogColumn",
     "cmsDataFetcher",
     "img",
-    "cmsEntryField",
     "outer",
     "container",
     "svg",
@@ -623,17 +632,10 @@ const PlasmicDescendants = {
   hectoNav: ["hectoNav"],
   heroHorizontal: ["heroHorizontal", "link"],
   link: ["link"],
-  features: [
-    "features",
-    "blogColumn",
-    "cmsDataFetcher",
-    "img",
-    "cmsEntryField"
-  ],
-  blogColumn: ["blogColumn", "cmsDataFetcher", "img", "cmsEntryField"],
-  cmsDataFetcher: ["cmsDataFetcher", "img", "cmsEntryField"],
+  features: ["features", "blogColumn", "cmsDataFetcher", "img"],
+  blogColumn: ["blogColumn", "cmsDataFetcher", "img"],
+  cmsDataFetcher: ["cmsDataFetcher", "img"],
   img: ["img"],
-  cmsEntryField: ["cmsEntryField"],
   outer: ["outer", "container"],
   container: ["container"],
   svg: ["svg"],
@@ -641,7 +643,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   hectoNav: typeof HectoNav;
@@ -651,7 +653,6 @@ type NodeDefaultElementType = {
   blogColumn: "div";
   cmsDataFetcher: typeof CmsQueryRepeater;
   img: typeof p.PlasmicImg;
-  cmsEntryField: typeof CmsRowField;
   outer: "div";
   container: "div";
   svg: "svg";
@@ -725,7 +726,6 @@ export const PlasmicResources = Object.assign(
     blogColumn: makeNodeComponent("blogColumn"),
     cmsDataFetcher: makeNodeComponent("cmsDataFetcher"),
     img: makeNodeComponent("img"),
-    cmsEntryField: makeNodeComponent("cmsEntryField"),
     outer: makeNodeComponent("outer"),
     container: makeNodeComponent("container"),
     svg: makeNodeComponent("svg"),

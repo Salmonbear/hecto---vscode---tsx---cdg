@@ -50,6 +50,8 @@ import sty from "./PlasmicPricing.module.css"; // plasmic-import: _4O1QdxW3S1/cs
 import ArrowRightsvgIcon from "./icons/PlasmicIcon__ArrowRightsvg"; // plasmic-import: g1j_XxrLjbNK/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: aExR7mqu1-8/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicPricing__VariantMembers = {};
 export type PlasmicPricing__VariantsArgs = {};
 type VariantPropType = keyof PlasmicPricing__VariantsArgs;
@@ -99,9 +101,7 @@ function PlasmicPricing__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(
     () =>
       Object.assign(
@@ -118,11 +118,13 @@ function PlasmicPricing__RenderFunc(props: {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantskILw5UiAaS1UF()
@@ -652,7 +654,7 @@ function PlasmicPricing__RenderFunc(props: {
                             }
                             style={{ color: "#FFFFFF" }}
                           >
-                            {"£0 / month"}
+                            {"\u00a30 / month"}
                           </span>
                         </React.Fragment>
                       </h1>
@@ -710,6 +712,7 @@ function PlasmicPricing__RenderFunc(props: {
                         )}
                         color={"blue" as const}
                         link={"#" as const}
+                        submitsForm={true}
                       >
                         <div
                           className={classNames(
@@ -777,6 +780,7 @@ function PlasmicPricing__RenderFunc(props: {
                         ? ("https://app.hecto.io/search" as const)
                         : ("https://app.hecto.io" as const)
                     }
+                    submitsForm={true}
                   >
                     <div
                       className={classNames(
@@ -805,7 +809,7 @@ function PlasmicPricing__RenderFunc(props: {
                       sty.text__bUfY4
                     )}
                   >
-                    {"© Hecto. All rights reserved"}
+                    {"\u00a9 Hecto. All rights reserved"}
                   </div>
                   <p.PlasmicLink
                     data-plasmic-name={"link"}
@@ -892,7 +896,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   embedHtml: typeof Embed;

@@ -45,6 +45,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_hecto.module.css"; // plasmic-import: jLAmXkGdPPYDvKpL9j3cJd/projectcss
 import sty from "./PlasmicBestNewsletters.module.css"; // plasmic-import: TJwdvQ55yqK/css
 
+createPlasmicElementProxy;
+
 export type PlasmicBestNewsletters__VariantMembers = {};
 export type PlasmicBestNewsletters__VariantsArgs = {};
 type VariantPropType = keyof PlasmicBestNewsletters__VariantsArgs;
@@ -57,7 +59,7 @@ export const PlasmicBestNewsletters__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicBestNewsletters__OverridesType = {
   root?: p.Flex<"div">;
-  head?: p.Flex<typeof PlasmicHead>;
+  pageMetadataOverride?: p.Flex<typeof PlasmicHead>;
   hectoNav?: p.Flex<typeof HectoNav>;
   h2?: p.Flex<"h2">;
   bestCall?: p.Flex<typeof DataFetcher>;
@@ -91,20 +93,20 @@ function PlasmicBestNewsletters__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <React.Fragment>
@@ -148,9 +150,9 @@ function PlasmicBestNewsletters__RenderFunc(props: {
             )}
           >
             <PlasmicHead
-              data-plasmic-name={"head"}
-              data-plasmic-override={overrides.head}
-              className={classNames("__wab_instance", sty.head)}
+              data-plasmic-name={"pageMetadataOverride"}
+              data-plasmic-override={overrides.pageMetadataOverride}
+              className={classNames("__wab_instance", sty.pageMetadataOverride)}
               title={"The Best Newsletters" as const}
             />
 
@@ -171,16 +173,23 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                       sty.h1__xZ0R6
                     )}
                   >
-                    {(() => {
-                      try {
-                        return "The Best " + $ctx.params.slug + " Newsletters";
-                      } catch (e) {
-                        if (e instanceof TypeError) {
-                          return "The Best";
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (
+                            "The Best " + $ctx.params.slug + " Newsletters"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "The Best";
+                          }
+                          throw e;
                         }
-                        throw e;
-                      }
-                    })()}
+                      })()}
+                    </React.Fragment>
                   </h1>
                   <h2
                     data-plasmic-name={"h2"}
@@ -192,20 +201,25 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                       sty.h2
                     )}
                   >
-                    {(() => {
-                      try {
-                        return (
-                          "Stay on top of " +
-                          $ctx.params.slug +
-                          " related news and developments"
-                        );
-                      } catch (e) {
-                        if (e instanceof TypeError) {
-                          return "The Best";
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (
+                            "Stay on top of " +
+                            $ctx.params.slug +
+                            " related news and developments"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "The Best";
+                          }
+                          throw e;
                         }
-                        throw e;
-                      }
-                    })()}
+                      })()}
+                    </React.Fragment>
                   </h2>
                 </div>
               </div>
@@ -242,7 +256,10 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                         try {
                           return $ctx.fetchedData.response.results;
                         } catch (e) {
-                          if (e instanceof TypeError) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
                             return [];
                           }
                           throw e;
@@ -264,16 +281,21 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                             sty.h1__xMqbg
                           )}
                         >
-                          {(() => {
-                            try {
-                              return currentItem["Business Name"];
-                            } catch (e) {
-                              if (e instanceof TypeError) {
-                                return "Title";
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem["Business Name"];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "Title";
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
+                            })()}
+                          </React.Fragment>
                         </h1>
                         <p.PlasmicImg
                           data-plasmic-name={"img"}
@@ -291,7 +313,10 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                             try {
                               return currentItem["Profile Image"];
                             } catch (e) {
-                              if (e instanceof TypeError) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
                                 return undefined;
                               }
                               throw e;
@@ -324,16 +349,21 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                             sty.text__lltQe
                           )}
                         >
-                          {(() => {
-                            try {
-                              return currentItem["Summary - Short"];
-                            } catch (e) {
-                              if (e instanceof TypeError) {
-                                return "Newsdletter Description";
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem["Summary - Short"];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "Newsdletter Description";
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
+                            })()}
+                          </React.Fragment>
                         </div>
                         <div
                           className={classNames(
@@ -360,16 +390,21 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                             sty.text__pddxR
                           )}
                         >
-                          {(() => {
-                            try {
-                              return currentItem["Newsletter Freq"];
-                            } catch (e) {
-                              if (e instanceof TypeError) {
-                                return "Cadence";
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem["Newsletter Freq"];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "Cadence";
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
+                            })()}
+                          </React.Fragment>
                         </div>
                         <div
                           className={classNames(
@@ -378,16 +413,21 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                             sty.text__xZzg
                           )}
                         >
-                          {(() => {
-                            try {
-                              return undefined;
-                            } catch (e) {
-                              if (e instanceof TypeError) {
+                          <React.Fragment>
+                            {(() => {
+                              try {
                                 return undefined;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
+                            })()}
+                          </React.Fragment>
                         </div>
                         <div
                           className={classNames(
@@ -414,16 +454,21 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                             sty.text__gIi0X
                           )}
                         >
-                          {(() => {
-                            try {
-                              return currentItem.Subscribers;
-                            } catch (e) {
-                              if (e instanceof TypeError) {
-                                return undefined;
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem.Subscribers;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
+                            })()}
+                          </React.Fragment>
                         </div>
                         <div
                           className={classNames(
@@ -464,7 +509,11 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                                         currentItem.Slug
                                       );
                                     } catch (e) {
-                                      if (e instanceof TypeError) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
                                         return "www.hecto.io";
                                       }
                                       throw e;
@@ -507,7 +556,7 @@ function PlasmicBestNewsletters__RenderFunc(props: {
                       sty.text__sTBlh
                     )}
                   >
-                    {"© Hecto. All rights reserved"}
+                    {"\u00a9 Hecto. All rights reserved"}
                   </div>
                   <p.PlasmicLink
                     className={classNames(
@@ -568,7 +617,7 @@ function PlasmicBestNewsletters__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "head",
+    "pageMetadataOverride",
     "hectoNav",
     "h2",
     "bestCall",
@@ -577,7 +626,7 @@ const PlasmicDescendants = {
     "columns",
     "footerBottom"
   ],
-  head: ["head"],
+  pageMetadataOverride: ["pageMetadataOverride"],
   hectoNav: ["hectoNav"],
   h2: ["h2"],
   bestCall: ["bestCall", "img", "h3"],
@@ -588,10 +637,10 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  head: typeof PlasmicHead;
+  pageMetadataOverride: typeof PlasmicHead;
   hectoNav: typeof HectoNav;
   h2: "h2";
   bestCall: typeof DataFetcher;
@@ -661,7 +710,7 @@ export const PlasmicBestNewsletters = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    head: makeNodeComponent("head"),
+    pageMetadataOverride: makeNodeComponent("pageMetadataOverride"),
     hectoNav: makeNodeComponent("hectoNav"),
     h2: makeNodeComponent("h2"),
     bestCall: makeNodeComponent("bestCall"),

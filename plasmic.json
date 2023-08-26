@@ -36,47 +36,56 @@
         {
           "id": "kv6Mk_JNYw",
           "name": "Button",
-          "componentImportPath": "antd/lib/button"
+          "displayName": "AntdButton",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerButton"
         },
         {
           "id": "iBC45mjTXv",
           "name": "Slider",
+          "displayName": "AntdSlider",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerSlider"
         },
         {
           "id": "tRueht1jub",
           "name": "Switch",
-          "componentImportPath": "antd/lib/switch"
+          "displayName": "AntdSwitch",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerSwitch"
         },
         {
           "id": "YRr0RPAdEj",
           "name": "Option",
-          "componentImportPath": "rc-select"
+          "displayName": "AntdOption",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerOption"
         },
         {
           "id": "Ay1H491feg",
           "name": "OptGroup",
-          "componentImportPath": "rc-select"
+          "displayName": "AntdOptionGroup",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerOption"
         },
         {
           "id": "2YpGIhkzkpc",
           "name": "Select",
-          "componentImportPath": "antd/lib/select"
+          "displayName": "AntdSelect",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerSelect"
         },
         {
           "id": "yegZ392NLoV",
           "name": "CollapsePanel",
-          "componentImportPath": "antd/lib/collapse/CollapsePanel"
+          "displayName": "AntdCollapsePanel",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerCollapse"
         },
         {
           "id": "F10gpQ1ZhXY",
           "name": "Collapse",
+          "displayName": "AntdCollapse",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerCollapse"
         },
         {
           "id": "SAEWraOT2YV",
           "name": "Checkbox",
-          "componentImportPath": "antd/lib/checkbox/Checkbox",
+          "displayName": "AntdCheckbox",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerCheckbox",
           "helper": {
             "name": "checkboxHelpers",
             "importPath": "@plasmicpkgs/antd/skinny/registerCheckbox"
@@ -85,42 +94,50 @@
         {
           "id": "m5zFS-kMOL-",
           "name": "CheckboxGroup",
-          "componentImportPath": "antd/lib/checkbox/Group"
+          "displayName": "AntdCheckboxGroup",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerCheckbox"
         },
         {
           "id": "6DZuSUEKjFh",
           "name": "MenuDivider",
-          "componentImportPath": "antd/lib/menu/MenuDivider"
+          "displayName": "AntdMenuDivider",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerMenu"
         },
         {
           "id": "HZ6EmQgIQJr",
           "name": "MenuItem",
-          "componentImportPath": "antd/lib/menu/MenuItem"
+          "displayName": "AntdMenuItem",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerMenu"
         },
         {
           "id": "LGE6ExNG8fZ",
-          "name": "ItemGroup",
-          "componentImportPath": "rc-menu"
+          "name": "MenuItemGroup",
+          "displayName": "AntdMenuItemGroup",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerMenu"
         },
         {
           "id": "DSwQm8gUYob",
           "name": "SubMenu",
-          "componentImportPath": "antd/lib/menu/SubMenu"
+          "displayName": "AntdSubMenu",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerMenu"
         },
         {
           "id": "Iz_hLKpHZDg",
           "name": "Menu",
-          "componentImportPath": "antd/lib/menu/index"
+          "displayName": "AntdMenu",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerMenu"
         },
         {
           "id": "_C8wcdH3BDp",
           "name": "Carousel",
-          "componentImportPath": "antd/lib/carousel"
+          "displayName": "AntdCarousel",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerCarousel"
         },
         {
           "id": "tO9wrxr8Nbb",
           "name": "Input",
-          "componentImportPath": "antd/lib/input",
+          "displayName": "AntdInput",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerInput",
           "helper": {
             "name": "inputHelpers",
             "importPath": "@plasmicpkgs/antd/skinny/registerInput"
@@ -129,7 +146,8 @@
         {
           "id": "ZJIPHLoTjkN",
           "name": "TextArea",
-          "componentImportPath": "antd/lib/input/TextArea",
+          "displayName": "AntdInputTextArea",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerInput",
           "helper": {
             "name": "inputHelpers",
             "importPath": "@plasmicpkgs/antd/skinny/registerInput"
@@ -138,7 +156,8 @@
         {
           "id": "zDcn8vsMldu",
           "name": "Search",
-          "componentImportPath": "antd/lib/input/Search",
+          "displayName": "AntdInputSearch",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerInput",
           "helper": {
             "name": "inputHelpers",
             "importPath": "@plasmicpkgs/antd/skinny/registerInput"
@@ -147,7 +166,8 @@
         {
           "id": "fTDg0FM1tnD",
           "name": "Password",
-          "componentImportPath": "antd/lib/input/Password",
+          "displayName": "AntdInputPassword",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerInput",
           "helper": {
             "name": "inputHelpers",
             "importPath": "@plasmicpkgs/antd/skinny/registerInput"
@@ -156,46 +176,55 @@
         {
           "id": "uZueUXuqePq",
           "name": "InputGroup",
-          "componentImportPath": "antd/lib/input/Group"
+          "displayName": "AntdInputGroup",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerInput"
         },
         {
           "id": "cv59X4q0WK",
           "name": "Dropdown",
+          "displayName": "AntdDropdown",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerDropdown"
         },
         {
           "id": "cHUYQj2aKK",
           "name": "DropdownButton",
-          "componentImportPath": "antd/lib/dropdown/dropdown-button"
+          "displayName": "AntdDropdownButton",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerDropdown"
         },
         {
           "id": "p3HNI5RglT",
           "name": "TabPane",
+          "displayName": "AntdTabPane",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTabs"
         },
         {
           "id": "Hb-DVgvuk3",
           "name": "Tabs",
+          "displayName": "AntdTabs",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTabs"
         },
         {
           "id": "Q0BhxRa-Moi",
           "name": "Rate",
-          "componentImportPath": "antd/lib/rate"
+          "displayName": "AntdRate",
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerRate"
         },
         {
           "id": "LF24IrAPbeRN",
           "name": "TableWrapper",
+          "displayName": "AntdTable",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         },
         {
           "id": "qJFaUEuzy9Ae",
           "name": "TableColumn",
+          "displayName": "AntdTableColumn",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         },
         {
           "id": "aOob39p1-Dlv",
           "name": "TableValue",
+          "displayName": "AntdTableValue",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
       ]
@@ -215,21 +244,31 @@
         {
           "id": "CMDBvOhaI4s",
           "name": "Iframe",
+          "displayName": "hostless-iframe",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         },
         {
           "id": "RhitNJW5Zu-",
           "name": "Video",
+          "displayName": "hostless-html-video",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         },
         {
           "id": "PKldDYkH42",
           "name": "Embed",
+          "displayName": "hostless-embed",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         },
         {
           "id": "D4RbnlpRXg3",
           "name": "DataProvider",
+          "displayName": "hostless-data-provider",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "zlBHsvkFlN",
+          "name": "ConditionGuard",
+          "displayName": "hostless-condition-guard",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ]
@@ -249,11 +288,13 @@
         {
           "id": "ae7V86eNoXA",
           "name": "DataFetcher",
+          "displayName": "hostless-plasmic-query-data-fetcher",
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         },
         {
           "id": "0DrxdjD45dkx",
           "name": "GraphqlFetcher",
+          "displayName": "hostless-plasmic-query-graphql-fetcher",
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
       ]
@@ -273,6 +314,7 @@
         {
           "id": "jGx9tiKJoex",
           "name": "NavigationBar",
+          "displayName": "hostless-plasmic-navigation-bar",
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
       ]
@@ -292,31 +334,37 @@
         {
           "id": "w6HdOz-Pcn",
           "name": "CmsRowField",
+          "displayName": "hostless-plasmic-cms-row-field",
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         },
         {
           "id": "Ds6UdKRHmq",
           "name": "CmsRowLink",
+          "displayName": "hostless-plasmic-cms-row-link",
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         },
         {
           "id": "dj_Vc2QmFA",
           "name": "CmsRowImage",
+          "displayName": "hostless-plasmic-cms-row-image",
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         },
         {
           "id": "r3UO4W-xcR",
           "name": "CmsRowFieldValue",
+          "displayName": "hostless-plasmic-cms-row-value",
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         },
         {
           "id": "OREVbGCcgN",
           "name": "CmsCredentialsProvider",
+          "displayName": "hostless-plasmic-cms-credentials-provider",
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         },
         {
           "id": "8N9-WfZSaq",
           "name": "CmsQueryRepeater",
+          "displayName": "hostless-plasmic-cms-query-repeater",
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         }
       ]
@@ -637,11 +685,13 @@
         {
           "id": "Lo3ARtUvly",
           "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
           "componentImportPath": "@plasmicapp/react-web"
         },
         {
           "id": "0IV3YTLJhO",
           "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ]
@@ -667,6 +717,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.273",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.273/dist/plasmic.schema.json"
+  "cliVersion": "0.1.307",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.307/dist/plasmic.schema.json"
 }

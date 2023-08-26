@@ -51,6 +51,8 @@ import sty from "./PlasmicIndex.module.css"; // plasmic-import: skdcktnuML/css
 import ArrowRightsvgIcon from "./icons/PlasmicIcon__ArrowRightsvg"; // plasmic-import: g1j_XxrLjbNK/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: aExR7mqu1-8/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicIndex__VariantMembers = {};
 export type PlasmicIndex__VariantsArgs = {};
 type VariantPropType = keyof PlasmicIndex__VariantsArgs;
@@ -110,9 +112,7 @@ function PlasmicIndex__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(
     () =>
       Object.assign(
@@ -129,11 +129,13 @@ function PlasmicIndex__RenderFunc(props: {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantskILw5UiAaS1UF()
@@ -333,7 +335,8 @@ function PlasmicIndex__RenderFunc(props: {
                                 role={"img"}
                               />
                             }
-                            link={"https://www.hecto.io/search" as const}
+                            link={"https://app.hecto.io/search" as const}
+                            submitsForm={true}
                           >
                             <div
                               className={classNames(
@@ -374,6 +377,7 @@ function PlasmicIndex__RenderFunc(props: {
                               ? ("https://app.hecto.io/search" as const)
                               : ("https://hecto.io/newsletter-creators" as const)
                           }
+                          submitsForm={true}
                         >
                           <div
                             className={classNames(
@@ -1168,6 +1172,7 @@ function PlasmicIndex__RenderFunc(props: {
                         )}
                         color={"blue" as const}
                         link={"#" as const}
+                        submitsForm={true}
                       >
                         <div
                           className={classNames(
@@ -1230,6 +1235,7 @@ function PlasmicIndex__RenderFunc(props: {
                       />
                     }
                     link={"https://www.hecto.io/search" as const}
+                    submitsForm={true}
                   >
                     <div
                       className={classNames(
@@ -1319,7 +1325,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   embedHtml: typeof Embed;

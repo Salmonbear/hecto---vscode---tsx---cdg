@@ -41,6 +41,7 @@ import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms"; // plasmic-import: 
 import { PlasmicHead } from "@plasmicapp/react-web"; // plasmic-import: Lo3ARtUvly/codeComponent
 import Button from "../../Button"; // plasmic-import: 16yj8MRmRBT/component
 import Footer from "../../Footer"; // plasmic-import: Iw1cdeIou4/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: 0IV3YTLJhO/codeComponent
 
 import { useScreenVariants as useScreenVariantskILw5UiAaS1UF } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: kILw5uiAaS1uF/globalVariant
 
@@ -50,6 +51,8 @@ import projectcss from "./plasmic_hecto.module.css"; // plasmic-import: jLAmXkGd
 import sty from "./PlasmicBlogArticle.module.css"; // plasmic-import: VBD1lfaH6xV/css
 
 import ArrowRightsvgIcon from "./icons/PlasmicIcon__ArrowRightsvg"; // plasmic-import: g1j_XxrLjbNK/icon
+
+createPlasmicElementProxy;
 
 export type PlasmicBlogArticle__VariantMembers = {};
 export type PlasmicBlogArticle__VariantsArgs = {};
@@ -70,7 +73,7 @@ export type PlasmicBlogArticle__OverridesType = {
   leadTitle?: p.Flex<"h1">;
   img?: p.Flex<typeof p.PlasmicImg>;
   blogBody?: p.Flex<"div">;
-  head?: p.Flex<typeof PlasmicHead>;
+  pageMetadataOverride?: p.Flex<typeof PlasmicHead>;
   button?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
   footer?: p.Flex<typeof Footer>;
@@ -100,20 +103,20 @@ function PlasmicBlogArticle__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantskILw5UiAaS1UF()
@@ -191,7 +194,10 @@ function PlasmicBlogArticle__RenderFunc(props: {
                 try {
                   return $ctx.params.slug;
                 } catch (e) {
-                  if (e instanceof TypeError) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
                     return undefined;
                   }
                   throw e;
@@ -276,17 +282,22 @@ function PlasmicBlogArticle__RenderFunc(props: {
                           sty.leadTitle
                         )}
                       >
-                        {(() => {
-                          try {
-                            return $ctx.plasmicCmsBlogArticlesItem.data
-                              .h1Heading;
-                          } catch (e) {
-                            if (e instanceof TypeError) {
-                              return undefined;
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.plasmicCmsBlogArticlesItem.data
+                                .h1Heading;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()}
+                          })()}
+                        </React.Fragment>
                       </h1>
                       <h2
                         className={classNames(
@@ -296,17 +307,22 @@ function PlasmicBlogArticle__RenderFunc(props: {
                           sty.h2__xe1Vx
                         )}
                       >
-                        {(() => {
-                          try {
-                            return $ctx.plasmicCmsBlogArticlesItem.data
-                              .h2Subtitle;
-                          } catch (e) {
-                            if (e instanceof TypeError) {
-                              return "Enter some text";
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.plasmicCmsBlogArticlesItem.data
+                                .h2Subtitle;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Enter some text";
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()}
+                          })()}
+                        </React.Fragment>
                       </h2>
                       <div
                         className={classNames(
@@ -400,7 +416,11 @@ function PlasmicBlogArticle__RenderFunc(props: {
                                   return $ctx.plasmicCmsBlogArticlesItem.data
                                     .body;
                                 } catch (e) {
-                                  if (e instanceof TypeError) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
                                     return "Enter some text";
                                   }
                                   throw e;
@@ -412,15 +432,21 @@ function PlasmicBlogArticle__RenderFunc(props: {
                       </div>
                     </div>
                     <PlasmicHead
-                      data-plasmic-name={"head"}
-                      data-plasmic-override={overrides.head}
-                      className={classNames("__wab_instance", sty.head)}
+                      data-plasmic-name={"pageMetadataOverride"}
+                      data-plasmic-override={overrides.pageMetadataOverride}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.pageMetadataOverride
+                      )}
                       description={(() => {
                         try {
                           return $ctx.plasmicCmsBlogArticlesItem.data
                             .metaDescription;
                         } catch (e) {
-                          if (e instanceof TypeError) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
                             return undefined;
                           }
                           throw e;
@@ -434,7 +460,10 @@ function PlasmicBlogArticle__RenderFunc(props: {
                             $ctx.plasmicCmsBlogArticlesItem.data.h1Heading
                           );
                         } catch (e) {
-                          if (e instanceof TypeError) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
                             return undefined;
                           }
                           throw e;
@@ -495,6 +524,7 @@ function PlasmicBlogArticle__RenderFunc(props: {
                       />
                     }
                     showEndIcon={true}
+                    submitsForm={true}
                   >
                     <div
                       className={classNames(
@@ -532,7 +562,7 @@ const PlasmicDescendants = {
     "leadTitle",
     "img",
     "blogBody",
-    "head",
+    "pageMetadataOverride",
     "button",
     "svg",
     "footer"
@@ -544,20 +574,20 @@ const PlasmicDescendants = {
     "leadTitle",
     "img",
     "blogBody",
-    "head"
+    "pageMetadataOverride"
   ],
   link: ["link"],
   leadTitle: ["leadTitle"],
   img: ["img"],
   blogBody: ["blogBody"],
-  head: ["head"],
+  pageMetadataOverride: ["pageMetadataOverride"],
   button: ["button", "svg"],
   svg: ["svg"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   hectoNav: typeof HectoNav;
@@ -566,7 +596,7 @@ type NodeDefaultElementType = {
   leadTitle: "h1";
   img: typeof p.PlasmicImg;
   blogBody: "div";
-  head: typeof PlasmicHead;
+  pageMetadataOverride: typeof PlasmicHead;
   button: typeof Button;
   svg: "svg";
   footer: typeof Footer;
@@ -638,7 +668,7 @@ export const PlasmicBlogArticle = Object.assign(
     leadTitle: makeNodeComponent("leadTitle"),
     img: makeNodeComponent("img"),
     blogBody: makeNodeComponent("blogBody"),
-    head: makeNodeComponent("head"),
+    pageMetadataOverride: makeNodeComponent("pageMetadataOverride"),
     button: makeNodeComponent("button"),
     svg: makeNodeComponent("svg"),
     footer: makeNodeComponent("footer"),

@@ -46,6 +46,8 @@ import sty from "./PlasmicButton.module.css"; // plasmic-import: 16yj8MRmRBT/css
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: aExR7mqu1-8/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nRPVX95eDxZ/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicButton__VariantMembers = {
   showStartIcon: "showStartIcon";
   showEndIcon: "showEndIcon";
@@ -104,13 +106,17 @@ export type PlasmicButton__ArgsType = {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   link?: string;
+  submitsForm?: boolean;
+  target?: boolean;
 };
 type ArgPropType = keyof PlasmicButton__ArgsType;
 export const PlasmicButton__ArgProps = new Array<ArgPropType>(
   "children",
   "startIcon",
   "endIcon",
-  "link"
+  "link",
+  "submitsForm",
+  "target"
 );
 
 export type PlasmicButton__OverridesType = {
@@ -121,6 +127,8 @@ export type PlasmicButton__OverridesType = {
 };
 
 export interface DefaultButtonProps extends pp.BaseButtonProps {
+  submitsForm?: boolean;
+  target?: boolean;
   shape?: SingleChoiceArg<"rounded" | "round" | "sharp">;
   size?: SingleChoiceArg<"compact" | "minimal">;
   color?: SingleChoiceArg<
@@ -162,21 +170,22 @@ function PlasmicButton__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
-  const stateSpecs = React.useMemo(
+
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "showStartIcon",
@@ -215,9 +224,14 @@ function PlasmicButton__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.color
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {
@@ -624,7 +638,7 @@ function PlasmicButton__RenderFunc(props: {
   ) as React.ReactElement | null;
 }
 
-function useBehavior<P extends pp.BaseButtonProps>(
+function useBehavior<P extends pp.PlumeButtonProps>(
   props: P,
   ref: pp.ButtonRef
 ) {
@@ -662,7 +676,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "button";
   startIconContainer: "div";

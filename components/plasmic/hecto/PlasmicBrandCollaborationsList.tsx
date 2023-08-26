@@ -50,6 +50,8 @@ import sty from "./PlasmicBrandCollaborationsList.module.css"; // plasmic-import
 import ArrowRightsvgIcon from "./icons/PlasmicIcon__ArrowRightsvg"; // plasmic-import: g1j_XxrLjbNK/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: aExR7mqu1-8/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicBrandCollaborationsList__VariantMembers = {};
 export type PlasmicBrandCollaborationsList__VariantsArgs = {};
 type VariantPropType = keyof PlasmicBrandCollaborationsList__VariantsArgs;
@@ -70,7 +72,7 @@ export type PlasmicBrandCollaborationsList__OverridesType = {
   leadTitle?: p.Flex<"h1">;
   h1?: p.Flex<"h1">;
   cmsDataFetcher?: p.Flex<typeof CmsQueryRepeater>;
-  head?: p.Flex<typeof PlasmicHead>;
+  pageMetadataOverride?: p.Flex<typeof PlasmicHead>;
   penguinXPhiladelphia?: p.Flex<"h1">;
   nikeXConverseXChinaTownMarket?: p.Flex<"h1">;
   nomadlistXBufferXRemoteOk?: p.Flex<"h1">;
@@ -106,20 +108,20 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <React.Fragment>
@@ -180,16 +182,21 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                 sty.leadTitle
               )}
             >
-              {(() => {
-                try {
-                  return $ctx.plasmicCmsBrandCollabsItem.data.h1Title;
-                } catch (e) {
-                  if (e instanceof TypeError) {
-                    return undefined;
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $ctx.plasmicCmsBrandCollabsItem.data.h1Title;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
+                })()}
+              </React.Fragment>
             </h1>
             <h2
               className={classNames(
@@ -300,15 +307,21 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
               <ph.DataCtxReader>
                 {$ctx => (
                   <PlasmicHead
-                    data-plasmic-name={"head"}
-                    data-plasmic-override={overrides.head}
-                    className={classNames("__wab_instance", sty.head)}
+                    data-plasmic-name={"pageMetadataOverride"}
+                    data-plasmic-override={overrides.pageMetadataOverride}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.pageMetadataOverride
+                    )}
                     description={(() => {
                       try {
                         return $ctx.plasmicCmsBlogArticlesItem.data
                           .metaDescription;
                       } catch (e) {
-                        if (e instanceof TypeError) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
                           return undefined;
                         }
                         throw e;
@@ -322,7 +335,10 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                           $ctx.plasmicCmsBlogArticlesItem.data.h1Heading
                         );
                       } catch (e) {
-                        if (e instanceof TypeError) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
                           return undefined;
                         }
                         throw e;
@@ -404,7 +420,7 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                         sty.h2__cIyDk
                       )}
                     >
-                      {"What we love about this cross marketing project"}
+                      {"What we love\u00a0about this cross marketing project"}
                     </h2>
                   }
                   <React.Fragment>
@@ -493,7 +509,7 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                     </h2>
                   }
                   <React.Fragment>
-                    {"\nYou can read a little more "}
+                    {"\nYou can read a little more\u00a0"}
                   </React.Fragment>
                   {
                     <p.PlasmicLink
@@ -683,6 +699,7 @@ function PlasmicBrandCollaborationsList__RenderFunc(props: {
                       }
                       link={`/brand-collaborations`}
                       showEndIcon={true}
+                      submitsForm={true}
                     >
                       <div
                         className={classNames(
@@ -725,7 +742,7 @@ const PlasmicDescendants = {
     "leadTitle",
     "h1",
     "cmsDataFetcher",
-    "head",
+    "pageMetadataOverride",
     "penguinXPhiladelphia",
     "nikeXConverseXChinaTownMarket",
     "nomadlistXBufferXRemoteOk",
@@ -739,8 +756,8 @@ const PlasmicDescendants = {
   hectoNav: ["hectoNav"],
   leadTitle: ["leadTitle"],
   h1: ["h1"],
-  cmsDataFetcher: ["cmsDataFetcher", "head"],
-  head: ["head"],
+  cmsDataFetcher: ["cmsDataFetcher", "pageMetadataOverride"],
+  pageMetadataOverride: ["pageMetadataOverride"],
   penguinXPhiladelphia: ["penguinXPhiladelphia"],
   nikeXConverseXChinaTownMarket: ["nikeXConverseXChinaTownMarket"],
   nomadlistXBufferXRemoteOk: ["nomadlistXBufferXRemoteOk"],
@@ -753,14 +770,14 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   hectoNav: typeof HectoNav;
   leadTitle: "h1";
   h1: "h1";
   cmsDataFetcher: typeof CmsQueryRepeater;
-  head: typeof PlasmicHead;
+  pageMetadataOverride: typeof PlasmicHead;
   penguinXPhiladelphia: "h1";
   nikeXConverseXChinaTownMarket: "h1";
   nomadlistXBufferXRemoteOk: "h1";
@@ -836,7 +853,7 @@ export const PlasmicBrandCollaborationsList = Object.assign(
     leadTitle: makeNodeComponent("leadTitle"),
     h1: makeNodeComponent("h1"),
     cmsDataFetcher: makeNodeComponent("cmsDataFetcher"),
-    head: makeNodeComponent("head"),
+    pageMetadataOverride: makeNodeComponent("pageMetadataOverride"),
     penguinXPhiladelphia: makeNodeComponent("penguinXPhiladelphia"),
     nikeXConverseXChinaTownMarket: makeNodeComponent(
       "nikeXConverseXChinaTownMarket"
